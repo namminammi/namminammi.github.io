@@ -124,6 +124,27 @@ p {
 	font-size: 15px;
 }
 
+.book {
+	margin: 35px;
+	font-size:15px;
+	text-align: left;
+
+}
+
+.book-2title {
+	margin: 32px;
+	font-size:15px;
+}
+
+.book-right {
+	margin: 32px;
+	font-size:15px;
+	text-align: right;
+}
+
+/*.tab {
+	text-indent: 30px;
+}*/
 
 
 img {
