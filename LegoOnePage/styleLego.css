@@ -1,6 +1,6 @@
 body{
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    /*padding: 0;*/
     width: 100%;
 
 }
@@ -25,11 +25,16 @@ h2 {
     padding: 0;
 }
  
+/*title {
+  margin:0 auto;
+  padding: 20px;
+}*/
 
+ 
 
-.center { margin: 0 auto; }
+/*.center { margin: 0 auto; }
 .content{ margin: 0 auto; width: 960px; }
-.clear { clear: both; }
+.clear { clear: both; }*/
 
 
 #header { 
@@ -99,45 +104,53 @@ h2 {
 }
 
 .quotes_white {
- font-family: 'Goudy Bookletter 1911', serif;
- color: #fff;
-   font-weight: normal;
-   font-size: 30px;
-  text-align: left;
-  margin: 50px auto;
+font-family: 'Goudy Bookletter 1911', serif;
+color: #fff;
+font-weight: normal;
+font-size: 30px;
+text-align: left;
+/*margin: 50px auto;*/
+padding: 20px;
+margin: 0 auto;
+/*display: inline-block;
+width: 100%;*/
 }
  
 .quotes_name_white {
  font-family: 'Goudy Bookletter 1911', serif;
  color: #fff;
-   font-weight: normal;
-   font-size: 22px;
-  text-align: right;
-  margin: 0 20px;
+ font-weight: normal;
+ font-size: 22px;
+text-align: right;
+padding: 20px;
+margin: 0 auto;
 }
 
  
 .boy_name_yellow { font-family:"Wellfleet";  margin: 0 auto; color: #FBB829; font-size: 50px; }
 .boy_name_white { font-family:"Wellfleet";  margin: 0 auto; color: #fff; font-size: 50px; }
   
- .boy_name_grey { font-family:"Wellfleet";  margin: 0 auto; color: #594F4F; font-size: 50px; }
- .quotes_container { width: 800px; margin: 0 auto; }
+.boy_name_grey { font-family:"Wellfleet";  margin: 0 auto; color: #594F4F; font-size: 50px; }
+.quotes_container { width: 100%; /*padding: 20px*/; margin: 0 auto; }
 
 .centeredImage
     {
     text-align:center;
+    /*margin:0 auto;*/
+    display: inline-block;
+width: 100%;
     
     }
 
 
 
-#slide1, #slide2{ width: 100%; }
+#slide1, #slide2 { width: 100%; }
 #slide1{
     /*background:url('../img/slide1.jpg') 50% 0 no-repeat fixed;*/
     background-color: #FBB829;
     color: #fff;
     height: 300px;
-    margin: 0;
+    margin: 0 auto;
     padding: 170px 0 240px 0;
     background-size: cover;
 }
@@ -152,10 +165,9 @@ h2 {
 }
  
 #slide3{
-    /*background: url(../img/slide3.jpg) 50% 0 no-repeat fixed;*/
     background-color: #547980;
     color: #547980;
-    height: 300px;
+    height: 340px;
     margin: 0 auto;
     overflow: hidden;
     padding: 150px 0 280px 0;
@@ -164,20 +176,18 @@ h2 {
 #slide4{
     background-color: #01C5BB;
     color: #333333;
-    height: 300px;
+    height: 440px;
     margin: 0 auto;
     overflow: hidden;
     padding: 150px 0 280px 0;
 }
  
 #slide5{
-    /*background: url(../img/slide5.jpg) 50% 0 no-repeat fixed;*/
     background-color: #72AD75;
-    height: 300px;
+    height: 390px;
     margin: 0 auto;
     padding: 150px 0 480px 0;
     color: #fff;
-    /*background-size: cover;*/
 }
 
 
