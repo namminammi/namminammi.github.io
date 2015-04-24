@@ -3,12 +3,12 @@ h2{font-size:25px;font-family:'Oxygen', sans-serif;font-weight:700;text-align:ce
 body{font-size:20px;font-family:'Open Sans', sans-serif;font-weight:400;color:#3f3f3f;text-align:center;background-image:url('images/Wood111.jpg');background-repeat:repeat-x| repeat-y;}
 a{font-size:17px;color:#3f3f3f;}
 p{margin:5px;}
-.title-box{position:relative;width:50%;border-radius:0;background:white;opacity:0.9;filter:alpha(opacity=90);margin:0 auto 0 auto;}
+.title-box{position:relative;width:80%;border-radius:0;background:white;opacity:0.9;filter:alpha(opacity=90);margin:0 auto 0 auto;}
 .page-box{position:relative;width:80%;border-radius:0;background:white;opacity:0.9;filter:alpha(opacity=90);margin:0 auto 0 auto;}
-.project-box{position:relative;width:50%;border-radius:0;background:white;opacity:0.9;filter:alpha(opacity=90);margin:0 auto 0 auto;}
-.music-box{position:relative;width:50%;border-radius:0;background:white;margin:0 auto 0 auto;}
+.project-box{position:relative;width:80%;border-radius:0;background:white;opacity:0.9;filter:alpha(opacity=90);margin:0 auto 0 auto;}
+.music-box{position:relative;width:80%;border-radius:0;background:white;margin:0 auto 0 auto;}
 .accordion{overflow:hidden;}
-.accordion-section-title{width:50%;padding:10px;display:inline-block;transition:all linear 0.15s;}
+.accordion-section-title{width:70%;padding:10px;display:inline-block;transition:all linear 0.15s;}
 .accordion-section-title.active, .accordion-section-title:hover{color:#D3D3D3;}
 .accordion-section-content{padding:10px;display:none;font-size:15px;}
 .small-link{font-size:15px;}
