@@ -44,7 +44,8 @@ h2 {
 
 #nav { 
   background-color: #594F4F;
-  width: 410px; 
+  width: 395px; 
+  height: 42px;
   float: right; 
   margin-right:24px;
   margin-top: 20px; }
@@ -55,33 +56,44 @@ h2 {
   float: left; 
   font-size: 30px; 
   margin-top: 20px; 
-  margin-left: 30px;
+  margin-left: 15px;
   color: #fff; 
   font-family:"Arvo"; 
   font-weight: normal; 
-  display: block;
+  display: inline-block;
 }
 
 #nav ul{
+  background-color: #594F4F;
   list-style: none;
-  display: block;
+  display: inline-block;
   margin: 0 auto;
+  padding-left: 27px;
+  padding-right: 20px;
+  width: 650px;
+  height: 42px;
 
-  list-style: none; 
 }
 
 #nav li{
   margin-top: 9px;  
   float: left;
   padding-left: 21px;
+  /*padding-right: 5px;*/
+  width: auto;
+  /*height: 42px;*/
 }
+
 
 #nav li a { 
   color: #fff; 
   opacity:0.6; 
   font-size: 18px; 
   text-decoration: none; 
-  font-family: 'Arvo'; }
+  font-family: 'Arvo'; 
+  /*padding-right: 10px;*/
+  /*height: 42px;*/
+}
 #nav li a.active { color: #fff; opacity:1; border-bottom: 2px solid #fff; }
 #nav li a:hover { color: #fff; opacity:1;  }
 
