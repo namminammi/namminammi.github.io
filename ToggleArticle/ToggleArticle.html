@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>La Fontaine Fable</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=McLaren' rel='stylesheet' type='text/css'>
+    
+    
+    <link rel="stylesheet" type="text/css" href="TA_style.css">
+  </head>
+  <body>
+    <h1>The Frog and Ox</h1>
+    <div>
+    <!-- <div id="banner">The Frog and Ox</div> -->
+    <div>
+      <div id="leftNav">
+        <span class="navItem" article="article1">French</span>
+        <span class="navItem" article="article2">English</span>
+        <span class="navItem" article="article3">German</span>
+      </div>
+      <div id="content">
+        <span id="title">&nbsp;</span>
+        <div id="article"></div>
+      </div>
+    </div>
+
+<!-- <footer>©2015</footer>
+ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+  function setArticle() {
+    $("#content").load("texts/"+$(this).attr("article") + ".html");
+}
+$(document).ready(function() {
+    $(".navItem").click(setArticle);
+});
+
+
+</script>
+  </body>  
+  </body>
+</html>
