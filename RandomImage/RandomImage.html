@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+
+    <title>Þú rótar í tilfinningum (You stir up emotions)</title>
+    <style type="text/css">
+    body{background-color: #000066;}
+    h1{margin:1.5em 1.5em 1.5em 1.5em;font-size: 3.2em;font-family: "Poiret One";color: white;text-align: left;}
+    /*span{margin:2.3em;font-size: 2em;font-family: "Poiret One";color: white;text-align:left;line-height:0.8em;}*/
+    span{margin:0em; font-size: 0.5em;font-family: "Poiret One";color: white;text-align:left;line-height:0em;}
+    #slideshow-container { height:80%; width:80%; position:relative; margin:1.5em;}
+    #slideshow-container img { position:absolute; left:0; top:0; width:80%; height:80% }
+    #slideshow      { position:absolute; left:0; top:0; width:80%; height:80%; list-style:none }
+    #slideshow img  { width:220px; height:190px; background-repeat:none; background-position:top left; position:relative; left:0; top:0 }
+    #slideshow      { position:absolute; left:0; top:0; width:80%; height:80%; }
+    #slideshow img  { width:220px; height:190px; background-repeat:none; background-position:top left; position:relative; left:0; top:0 } /* adjust this for your images */
+    #slideshow p {width: 80%;height:80%;  margin: 0 0.3em 0px 0.4em; line-height:0.9em; font-size: 7em;font-family: "Amatic SC";}
+    
+    </style>
+  </head>
+  <body>
+  <div><h1>Þú rótar í tilfinningum</h1></div>
+    <div id="slideshow-container">
+      <div id="slideshow"> 
+          <p style="color:red">Audacity</p>
+          <p style="color:#00b300">Expectation</p>
+          <p style="color:white;">Reason & Independence</p>
+          <p style="color:yellow">Tenderness</p>
+          <p style="color:#ff4500">Elation</p>
+          <p style="color:purple">Fascination</p>
+          <p style="color:#666000">Abandone</p>
+          <p style="color:grey">Renounce</p>
+          <p style="color:black">No response</p>
+
+      </div> 
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //extending jQuery with ':random' selector, best put into separate plugin js file
+        jQuery.jQueryRandom = 0;
+        jQuery.extend(jQuery.expr[":"],
+        {
+            random: function(a, i, m, r) {
+                if (i == 0) {
+                    jQuery.jQueryRandom = Math.floor(Math.random() * r.length);
+                };
+                return i == jQuery.jQueryRandom;
+            }
+        });        
+        //end :random extend
+
+        $(function() {
+          $('#slideshow p').not(':random').hide(); //hide all images except one initially
+          setInterval(function(){
+            $('#slideshow p:visible').fadeOut('slow')
+              .siblings('p:random').fadeIn('slow') //find a random image
+               .end().appendTo('#slideshow');}, 
+            1550); //2 second interval
+        });
+
+        $( "h1" ).hover(
+        function() {
+          $( this ).append( $( "<span>  (You stir up emotions)</span>" ) );
+        }, function() {
+          $( this ).find( "span:last" ).remove();
+        }
+      );
+       
+      $( "h1.fade" ).hover(function() {
+        $( this ).fadeOut( 300 );
+        $( this ).fadeIn( 600 );
+      });
+
+    </script>
+  </body>
+</html>
