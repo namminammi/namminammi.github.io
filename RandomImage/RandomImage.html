@@ -36,7 +36,6 @@
         text-align: left;
         line-height: 0.7em;
     }
-    /*span{margin:0em; font-size: 0.5em;font-family: "Poiret One";color: white;text-align:left;line-height:0em;}*/
     
     #slideshow-container {
         height: 80%;
@@ -192,8 +191,8 @@
 
 
     $('#slideshow').mouseover(function() {
-        var dWidth = $(document).width() + 320, // 100 = image width
-            dHeight = $(document).height() - 390, // 100 = image height
+        var dWidth = $(document).width() - 120, // 100 = image width
+            dHeight = $(document).height() + 30, // 100 = image height
             nextX = Math.floor(Math.random() * dWidth),
             nextY = Math.floor(Math.random() * dHeight);
         $(this).animate({
