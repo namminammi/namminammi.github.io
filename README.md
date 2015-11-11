@@ -1,7 +1,10 @@
 # namminammi.github.io
 
-Personal website by Nam Choi
+Nam Choi's Front End & iOS Development projects
 
-using HTML/CSS/Javascript
+HTML/CSS/Javascript 
+Jquer/Bootstrap/Angular
 
 responsive images & text
+
+et alia
