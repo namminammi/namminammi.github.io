@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scandinavian Countries: AngularJS Sample</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Scandinavian_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="Scandinavian_list.js"></script>
+    <script type="text/javascript">
+    function showonlyone(thechosenone) {
+        $('.country_desc').each(function(index) {
+            if ($(this).attr("id") == thechosenone) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+    </script>
+</head>
+
+<body>
+<div class="col-sm-6">
+    <div class="inline">
+        <a id="Denmark_list" href="javascript:showonlyone('Den_box');">Denmark</a>
+    </div>
+    <div class="inline">
+        <a id="Sweden_list" href="javascript:showonlyone('Swe_box');">Sweden</a>
+    </div>
+    <div class="inline">
+        <a id="Norway_list" href="javascript:showonlyone('Nor_box');">Norway</a>
+    </div>
+    <div class="inline">
+        <a id="Finland_list" href="javascript:showonlyone('Fin_box');">Finland</a>
+    </div>
+    <div class="inline">
+        <a id="Iceland_list" href="javascript:showonlyone('Ice_box');">Iceland</a>
+    </div>
+    <div class="inline">
+        <a id="Faroe_list" href="javascript:showonlyone('Faroe_box');">Faroe Island</a>
+    </div>
+    <div class="inline quiz">
+        <a id="Quiz_list" href="javascript:showonlyone('Quiz_box');">Trivia Quiz</a>
+    </div>
+</div>
+
+<div class="col-sm-6">
+    <div class="country_desc" id="Den_box" style="display: none">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2276627.192931753!2d8.190917752778411!3d56.13516525678899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464b27b6ee945ffb%3A0x528743d0c3e092cd!2sDenmark!5e0!3m2!1sen!2sus!4v1444865714407" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="dvDenmark">
+            <h1>Denmark things</h1>
+            <div ng-controller="DenmarkController as DenList">
+                <span>{{DenList.checked()}} of {{DenList.DenThings.length}} checked</span> [ <a class="clean" href="" ng-click="DenList.remove()">Clean Up</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="DenThing in DenList.DenThings">
+                        <input type="checkbox" ng-model="DenThing.done">
+                        <span class="done-{{DenThing.done}}">{{DenThing.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="DenList.addDenThing()">
+                    <input type="text" ng-model="DenList.DenThingText" size="30" placeholder="What else is in Denmark?">
+                    <input class="btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="country_desc" id="Swe_box" style="display: none">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15826652.35252453!2d-0.12033176023801494!3d61.03837927405753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465cb2396d35f0f1%3A0x22b8eba28dad6f62!2sSweden!5e0!3m2!1sen!2sus!4v1444865885237" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="dvSweden">
+            <h1>Sweden things</h1>
+            <div ng-controller="SwedenController as SweList">
+                <span>{{SweList.checked()}} of {{SweList.SweThings.length}} checked</span> [ <a class="clean" href="" ng-click="SweList.remove()">Clean Up</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="SweThing in SweList.SweThings">
+                        <input type="checkbox" ng-model="SweThing.done">
+                        <span class="done-{{SweThing.done}}">{{SweThing.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="SweList.addSweThing()">
+                    <input type="text" ng-model="SweList.SweThingText" size="30" placeholder="What else is in Sweden?">
+                    <input class="btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="country_desc" id="Nor_box" style="display: none;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14589959.802381644!2d0.23845631012452553!3d63.487920526736865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x461268458f4de5bf%3A0xa1b03b9db864d02b!2sNorway!5e0!3m2!1sen!2sus!4v1444865910065" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="dvNorway">
+            <h1>Norway things</h1>
+            <div ng-controller="NorwayController as NorList">
+                <span>{{NorList.checked()}} of {{NorList.NorThings.length}} checked</span> [ <a class="clean" href="" ng-click="NorList.remove()">Clean Up</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="NorThing in NorList.NorThings">
+                        <input type="checkbox" ng-model="NorThing.done">
+                        <span class="done-{{NorThing.done}}">{{NorThing.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="NorList.addNorThing()">
+                    <input type="text" ng-model="NorList.NorThingText" size="30" placeholder="What else is in Norway?">
+                    <input class="btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="country_desc" id="Fin_box" style="display: none;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6998500.350539959!2d17.112143825872145!3d64.64378889548738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4681cadf4b32f6dd%3A0x146d63c75a810!2sFinland!5e0!3m2!1sen!2sus!4v1444865961766" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="dvFinland">
+            <h1>Finland things</h1>
+            <div ng-controller="FinlandController as FinList">
+                <span>{{FinList.checked()}} of {{FinList.FinThings.length}} checked</span> [ <a class="clean" href="" ng-click="FinList.remove()">Clean Up</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="FinThing in FinList.FinThings">
+                        <input type="checkbox" ng-model="FinThing.done">
+                        <span class="done-{{FinThing.done}}">{{FinThing.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="FinList.addFinThing()">
+                    <input type="text" ng-model="FinList.FinThingText" size="30" placeholder="What else is in Finland?">
+                    <input class="btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="country_desc" id="Ice_box" style="display: none;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470902.133889739!2d-23.513284624190952!3d64.86355601848722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48d22b52a3eb6043%3A0x6f8a0434e5c1459a!2sIceland!5e0!3m2!1sen!2sus!4v1444865989364" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="dvIceland">
+            <h1>Iceland things</h1>
+            <div ng-controller="IcelandController as IceList">
+                <span>{{IceList.checked()}} of {{IceList.IceThings.length}} checked</span> [ <a class="clean" href="" ng-click="IceList.remove()">Clean Up</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="IceThing in IceList.IceThings">
+                        <input type="checkbox" ng-model="IceThing.done">
+                        <span class="done-{{IceThing.done}}">{{IceThing.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="IceList.addIceThing()">
+                    <input type="text" ng-model="IceList.IceThingText" size="30" placeholder="What else is in Iceland?">
+                    <input class="btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="country_desc" id="Faroe_box" style="display: none;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d962519.9072985725!2d-8.09660370801802!3d61.889094506371606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48bc1593762df9eb%3A0x3fb0314864f71b24!2sFaroe+Islands!5e0!3m2!1sen!2sus!4v1444866008471" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div id="dvFaroe">
+            <h1>Faroe Island things</h1>
+            <div ng-controller="FaroeController as FaroeList">
+                <span>{{FaroeList.checked()}} of {{FaroeList.FaroeThings.length}} checked</span> [ <a class="clean" href="" ng-click="FaroeList.remove()">Clean Up</a> ]
+                <ul class="unstyled">
+                    <li ng-repeat="FaroeThing in FaroeList.FaroeThings">
+                        <input type="checkbox" ng-model="FaroeThing.done">
+                        <span class="done-{{FaroeThing.done}}">{{FaroeThing.text}}</span>
+                    </li>
+                </ul>
+                <form ng-submit="FaroeList.addFaroeThing()">
+                    <input type="text" ng-model="FaroeList.FaroeThingText" size="30" placeholder="What else is in Faroe Island?">
+                    <input class="btn-primary" type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="country_desc" id="Quiz_box" style="display: none;">
+        <div id="dvQuiz">
+            <div class="container">
+                <h2 class="title">Little facts about scandinavian countries</h1>
+<script src="Scandinavian_quiz/Scan_quiz_app.js"></script>
+<script type='text/ng-template' id='Scandinavian_quiz/Scan_template.html'>
+    <div class="quiz-area" ng-show="inProgress">
+    <div ng-show="!quizOver">
+        <h3 id="question">{{question}}</h3>
+        <ul id="options">
+            <li ng-repeat="option in options">
+                <label>
+                    <input type="radio" name="answer" value="{{option}}">  &nbsp {{option}}
+                </label>
+            </li>
+        </ul>
+        <button ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
+
+        <div ng-show="!answerMode">
+            <button ng-click="nextQuestion()" class="next-question">Next</button>
+            <span ng-show="correctAnswer"><strong>&nbsp Yes!</strong></span>
+            <span ng-show="!correctAnswer">
+            <strong>Nej Nei!</strong> 
+            Correct answer is: <a class="correct_answer" href="{{right_answer_url}}">{{right_answer}}</a></span>
+        </div>
+    </div>
+
+    <div ng-show="quizOver">
+        <h2>That's all!</h2>
+                <button ng-click="reset()">Shall we do it again?</button>
+            </div>
+            <div id="score">
+                Score:{{score}}
+            </div>
+        </div>
+        <div class="intro" ng-show="!inProgress">
+            <h3>Can you answer this on top of your head?</h3>
+            <br>
+            <button id="startQuiz" ng-click="start()">Let's do it!</button>
+        </div>
+        </script>
+        <quiz/>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+    // Angular app manual bootstrap
+    var dvDenmark = document.getElementById('dvDenmark');
+    var dvSweden = document.getElementById('dvSweden');
+    var dvNorway = document.getElementById('dvNorway');
+    var dvFinland = document.getElementById('dvFinland');
+    var dvIceland = document.getElementById('dvIceland');
+    var dvFaroe = document.getElementById('dvFaroe');
+    var dvQuiz = document.getElementById('dvQuiz');
+
+    angular.element(document).ready(function() {
+        angular.bootstrap(dvDenmark, ['denmarkApp']);
+        angular.bootstrap(dvSweden, ['swedenApp']);
+        angular.bootstrap(dvNorway, ['norwayApp']);
+        angular.bootstrap(dvFinland, ['finlandApp']);
+        angular.bootstrap(dvIceland, ['icelandApp']);
+        angular.bootstrap(dvFaroe, ['faroeApp']);
+        angular.bootstrap(dvQuiz, ['quizApp']);
+
+    });
+    </script>
+</body>
+
+</html>
