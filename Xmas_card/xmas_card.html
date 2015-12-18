@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href='https://fonts.googleapis.com/css?family=Mountains+of+Christmas' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Wish you a sweet desert Christmas</title>
+    <style type="text/css">
+    body {
+        /*background-image: url("jumper_pattern.jpg");*/
+        /*background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("whirl_pattern.jpg");*/
+        /*background-color: rgba(255,0,0,0.1) ;*/
+        /*opacity: 0.7;*/
+    }
+    
+    .sweater_bg {
+        background-image: url("jumper_pattern.jpg");
+    }
+    
+    .flex_body {
+        /*margin: 0 -5%;*/
+    }
+    
+    .greet {
+        font-size: 2.5em;
+        /*line-height: 1.5em;*/
+        text-align: center;
+        margin: 10%;
+        /*padding: 10px;*/
+        font-family: 'Mountains of Christmas', cursive;
+        /* background-color: white;*/
+        /*width: 53%;*/
+    }
+
+    .open_greet {
+    font-size: 3em;
+
+        text-align: center;
+        margin: 10%;
+        
+        font-family: 'Mountains of Christmas', cursive;
+        
+    }
+    
+    #greet_letters {
+        /*position: absolute;*/
+        z-index: 1;
+    }
+    
+    #white_bg {
+        /*position: absolute;*/
+        /*background-color: rgba(255, 255, 255, 0.82);*/
+        background-color: white;
+        /*margin: 20px;*/
+        width: 90%;
+        height: 90%;
+        margin:5%;
+    }
+    
+    .entrance {
+        line-height: 1.1em;
+        padding: 1%;
+        margin: -7%;
+    }
+    
+    .enter {
+        color: white;
+        font-family: 'Abel', sans-serif;
+        font-size: 20px;
+        padding: 15px;
+        border: none;
+        background-color: red;
+    }
+    
+    .red_letter {
+        color: red;
+    }
+    
+    .green_letter {
+        color: #0D7120;
+        margin: 1%;
+    }
+    
+    .yellow_letter {
+        color: #FFE713;
+    }
+    
+    .open_btn {
+        color: white;
+        background-color: red;
+        font-family: 'Raleway', sans-serif;
+        padding: 3%;
+        margin: 20%;
+        text-align: center;
+    }
+    
+    .open_btn:hover {
+        background-color: yellow;
+        color: green;
+        transition-duration: 1s;
+    }
+    
+    .boxes {
+        margin: 0 5% 0 5%;
+    }
+    
+    .surprise {
+        color: white;
+        background-color: red;
+        font-family: 'Raleway', sans-serif;
+        padding: 3%;
+        margin: 15px;
+        text-align: center;
+        display: inline-block;
+    }
+    
+    .surprise:hover {
+        background-color: #0D7120;
+        transition-duration: 0.5s;
+    }
+    
+    .surprise:active {
+        background-color: yellow;
+        /*transition-duration: 0.5s;*/
+    }
+    
+    #image_div {
+        vertical-align: middle;
+        display: table-cell;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .nopale1{
+	margin:-3% -20% -48% -15%;
+    }
+
+    #cactus {
+        position: absolute;
+        z-index: 5;
+        width: 90%;
+        height: 83%;
+    }
+    
+    #chococookie {
+        position: absolute;
+        z-index: 10;
+        width: 90%;
+        height: 83%;
+    }
+    
+    #chivito {
+        position: absolute;
+        z-index: 20;
+        width: 90%;
+        height: 83%;
+    }
+    
+    #mac_n_cheese {
+        position: absolute;
+        z-index: 30;
+        width: 90%;
+        height: 83%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="flex_body">
+        <div id="white_bg" style="display:none;">
+            <div id="image_div">
+                <div id="cactus" style="display:none;">
+                    <image class= "nopale1"src="nopale1.png">
+                </div>
+                <div id="chococookie" style="display:none;">
+                    <image src="chococookiez.png">
+                </div>
+                <div id="chivito" style="display:none;">
+                    <image src="chivitoz.png">
+                </div>
+                <div id="mac_n_cheese" style="display:none;">
+                    <image src="mac_n_cheesezz.png">
+                </div>
+            </div>
+            <div id="start_message" style="visibility:hidden;">
+                <div class="greet" id="greet_letters">
+                    <h1 class="entrance">
+                <a class="yellow_letter">I </a>
+                <br>wish 
+                <br>you a<br>
+                <a class="red_letter">sweet</a> 
+                <br> <a class="green_letter">dessertful </a>
+                <br> Christmas</h1>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="surprise" id="cactus_btn">Your Tree</div>
+                <div class="surprise" id="chococookie_btn">Your Dessert</div>
+                <div class="surprise" id="chivito_btn">Your Sandwich</div>
+                <div class="surprise" id="mac_n_cheese_btn">Your Fav Food</div>
+            </div>
+        </div>
+        <div class="open_btn" id="open_btn"><div class="open_greet">Greetings</div><br><br>Click to open your card</div>
+    </div>
+
+    <!-- <audio id="jingle1"><source src="jingle1.wav"></source></audio> -->
+
+    <script type="text/javascript">
+    $(document).ready(function(e) {
+
+
+        $('#open_btn').click(function() {
+
+            $('#open_btn').fadeOut(1500).css('display', 'none');
+
+            $('#white_bg').fadeIn(1000).css('display', 'block');
+            
+
+            $('body').fadeIn(2000).addClass("sweater_bg");
+            $('#greet_letters').css('visibility', 'visible');
+
+        });
+
+        // var obj = document.createElement("audio");
+        // obj.src="jingle1.wav";
+        // obj.volume=0.50;
+        // obj.autoPlay=true;
+        // obj.loop = true;
+        // obj.preLoad=true;       
+ 
+        // $("#open_btn").click(function() {
+        //     obj.play();
+        // });
+
+
+
+
+        $('#cactus_btn').click(function() {
+        	var $el1=$(this);
+        	$el1.text($el1.text()== "Your Tree" ? "Nopale" : "Your Tree");
+
+            $('#cactus').toggle();
+            $('#cactus').animate({opacity:'0.5'}, 1200);
+            $('#cactus').animate({opacity:'1'}, 800);
+             obj.play();
+
+
+        });
+
+        $('#chococookie_btn').click(function() {
+            var $el2=$(this);
+        	$el2.text($el2.text()== "Your Dessert" ? "Chocolate Cookies" : "Your Dessert");
+
+            $('#chococookie').toggle();
+            $('#chococookie').animate({opacity:'0.5'}, 1200);
+            $('#chococookie').animate({opacity:'1'}, 800);
+            // $('#greet_letters').css('visibility', 'hidden');
+
+        });
+
+        $('#chivito_btn').click(function() {
+            var $el3=$(this);
+        	$el3.text($el3.text()== "Your Sandwich" ? "Chivito" : "Your Sandwich");
+
+            $('#chivito').toggle();
+            $('#chivito').animate({opacity:'0.5'}, 1200);
+            $('#chivito').animate({opacity:'1'}, 800);
+            
+        });
+
+        $('#mac_n_cheese_btn').click(function() {
+            var $el4=$(this);
+        	$el4.text($el4.text()== "Your Fav Food" ? "Mac-n-Cheese" : "Your Fav Food");
+
+            $('#mac_n_cheese').toggle();
+            $('#mac_n_cheese').animate({opacity:'0.5'}, 1200);
+            $('#mac_n_cheese').animate({opacity:'1'}, 800);
+
+        });
+
+
+
+    });
+    </script>
+</body>
+
+</html>
