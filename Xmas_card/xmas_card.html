@@ -12,7 +12,6 @@
     <meta charset="UTF-8">
     <title>Wish you a sweet desert Christmas</title>
     <style type="text/css">
-    
     .sweater_bg {
         background-image: url("jumper_pattern.jpg");
     }
@@ -31,15 +30,12 @@
         /* background-color: white;*/
         /*width: 53%;*/
     }
-
+    
     .open_greet {
-    font-size: 3em;
-
+        font-size: 3em;
         text-align: center;
         margin: 10%;
-        
         font-family: 'Mountains of Christmas', cursive;
-        
     }
     
     #greet_letters {
@@ -54,7 +50,7 @@
         /*margin: 20px;*/
         width: 90%;
         height: 90%;
-        margin:5%;
+        margin: 5%;
     }
     
     .entrance {
@@ -131,10 +127,10 @@
         text-align: center;
     }
     
-    .nopale1{
-	margin:-3% -20% -48% -15%;
+    .nopale1 {
+        margin: -3% -20% -48% -15%;
     }
-
+    
     #cactus {
         position: absolute;
         z-index: 5;
@@ -162,17 +158,26 @@
         width: 90%;
         height: 83%;
     }
-
-
-    @media screen and (max-width:728px){
-    	.nopale1{
-    		width:73%;
-    	}
-
-
+    
+    @media screen and (max-width:728px) {
+        #cactus,
+        #nopale1,
+        #chococookiez,
+        #chivitoz,
+        #mac_n_cheesezz {
+            margin: -26% -20% -48% -15%;
+        }
+        #cactus {
+            width: 80%;
+            height: 70%;
+        }
+        .open_greet {
+            font-size: 2.5em;
+        }
+        .greet {
+            font-size: 2em;
+        }
     }
-
-
     </style>
 </head>
 
@@ -181,16 +186,16 @@
         <div id="white_bg" style="display:none;">
             <div id="image_div">
                 <div id="cactus" style="display:none;">
-                    <image class= "nopale1"src="nopale1.png">
+                    <image id="nopale1" src="nopale1.png">
                 </div>
                 <div id="chococookie" style="display:none;">
-                    <image src="chococookiez.png">
+                    <image id="chococookiez" src="chococookiez.png">
                 </div>
                 <div id="chivito" style="display:none;">
-                    <image src="chivitoz.png">
+                    <image id="chivitoz" src="chivitoz.png">
                 </div>
                 <div id="mac_n_cheese" style="display:none;">
-                    <image src="mac_n_cheesezz.png">
+                    <image id="mac_n_cheesezz" src="mac_n_cheesezz.png">
                 </div>
             </div>
             <div id="start_message" style="visibility:hidden;">
@@ -211,11 +216,12 @@
                 <div class="surprise" id="mac_n_cheese_btn">Your Fav Food</div>
             </div>
         </div>
-        <div class="open_btn" id="open_btn"><div class="open_greet">Greetings</div><br><br>Click to open your card</div>
+        <div class="open_btn" id="open_btn">
+            <div class="open_greet">Greetings</div>
+            <br>
+            <br>Click to open your card</div>
     </div>
-
     <!-- <audio id="jingle1"><source src="jingle1.wav"></source></audio> -->
-
     <script type="text/javascript">
     $(document).ready(function(e) {
 
@@ -225,7 +231,7 @@
             $('#open_btn').fadeOut(1500).css('display', 'none');
 
             $('#white_bg').fadeIn(1000).css('display', 'block');
-            
+
 
             $('body').fadeIn(2000).addClass("sweater_bg");
             $('#greet_letters').css('visibility', 'visible');
@@ -238,7 +244,7 @@
         // obj.autoPlay=true;
         // obj.loop = true;
         // obj.preLoad=true;       
- 
+
         // $("#open_btn").click(function() {
         //     obj.play();
         // });
@@ -247,45 +253,61 @@
 
 
         $('#cactus_btn').click(function() {
-        	var $el1=$(this);
-        	$el1.text($el1.text()== "Your Tree" ? "Nopale" : "Your Tree");
+            var $el1 = $(this);
+            $el1.text($el1.text() == "Your Tree" ? "Nopale" : "Your Tree");
 
             $('#cactus').toggle();
-            $('#cactus').animate({opacity:'0.5'}, 1200);
-            $('#cactus').animate({opacity:'1'}, 800);
-             // obj.play();
+            $('#cactus').animate({
+                opacity: '0.5'
+            }, 1200);
+            $('#cactus').animate({
+                opacity: '1'
+            }, 800);
+            // obj.play();
 
 
         });
 
         $('#chococookie_btn').click(function() {
-            var $el2=$(this);
-        	$el2.text($el2.text()== "Your Dessert" ? "Chocolate Cookies" : "Your Dessert");
+            var $el2 = $(this);
+            $el2.text($el2.text() == "Your Dessert" ? "Chocolate Cookies" : "Your Dessert");
 
             $('#chococookie').toggle();
-            $('#chococookie').animate({opacity:'0.5'}, 1200);
-            $('#chococookie').animate({opacity:'1'}, 800).fadeOut(1800);
+            $('#chococookie').animate({
+                opacity: '0.5'
+            }, 1200);
+            $('#chococookie').animate({
+                opacity: '1'
+            }, 800).fadeOut(1800);
             // $('#greet_letters').css('visibility', 'hidden');
 
         });
 
         $('#chivito_btn').click(function() {
-            var $el3=$(this);
-        	$el3.text($el3.text()== "Your Sandwich" ? "Chivito" : "Your Sandwich");
+            var $el3 = $(this);
+            $el3.text($el3.text() == "Your Sandwich" ? "Chivito" : "Your Sandwich");
 
             $('#chivito').toggle();
-            $('#chivito').animate({opacity:'0.5'}, 1200);
-            $('#chivito').animate({opacity:'1'}, 800).fadeOut(1800);
-            
+            $('#chivito').animate({
+                opacity: '0.5'
+            }, 1200);
+            $('#chivito').animate({
+                opacity: '1'
+            }, 800).fadeOut(1800);
+
         });
 
         $('#mac_n_cheese_btn').click(function() {
-            var $el4=$(this);
-        	$el4.text($el4.text()== "Your Fav Food" ? "Mac-n-Cheese" : "Your Fav Food");
+            var $el4 = $(this);
+            $el4.text($el4.text() == "Your Fav Food" ? "Mac-n-Cheese" : "Your Fav Food");
 
             $('#mac_n_cheese').toggle();
-            $('#mac_n_cheese').animate({opacity:'0.5'}, 1200);
-            $('#mac_n_cheese').animate({opacity:'1'}, 800).fadeOut(1800);
+            $('#mac_n_cheese').animate({
+                opacity: '0.5'
+            }, 1200);
+            $('#mac_n_cheese').animate({
+                opacity: '1'
+            }, 800).fadeOut(1800);
 
         });
 
