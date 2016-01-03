@@ -1,1 +1,166 @@
-.button,p{text-decoration:none}.content,.icons{vertical-align:middle;text-align:center}.button,.content,.icons,.overlayContent{text-align:center}body{background-image:url(images/IMG_0624_darker2.png);background-position:center center;background-repeat:no-repeat;background-attachment:fixed;background-size:cover;background-color:#7C7C7C}body,html{height:100%}a,body,div,h1,html,p,section{margin:0;padding:0}.container{display:table;padding-top:25%;width:100%}.content{display:table-cell}h1{font-family:Roboto,sans-serif;font-size:7.5em;color:#fff}p{color:#000;font-weight:300;font-size:1.6em}.subtitle,a{font-family:Khula,sans-serif;font-weight:800}a{font-size:2.5em}.subtitle{font-size:3em;color:#BCBCBC;margin-bottom:1%}.button{display:inline-block;padding:10px 15px;color:#fff;border:2px solid #fff;border-radius:3px;font-weight:700;margin-top:.5em;margin-left:.3em}.button:hover{background-color:grey}.button:active{background-color:#fff;color:#000}.closeLink,.links_to{text-decoration:none;color:#fff}.footer{display:table;padding-top:80px;width:100%}.icons{display:table-cell}#ios_works,#sound_works,#web_works,.bgCover,.overlayBox{display:none}.icon_each{padding:0 1%}.bgCover{background:#000;position:absolute;left:0;top:0;overflow:hidden}.overlayBox{position:absolute;width:80%;height:60%}.overlayContent{padding:10px;line-height:3em}.closeLink{float:right;font-weight:100;border:1px solid;padding:0 2%}.links_to{font-weight:300;font-size:1.6em}.links_to:hover{color:grey}#web_works{margin-top:2%}#ios_works,#sound_works{margin-top:-3%}
+body {
+    background-image: url(images/IMG_0624_darker2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #7C7C7C;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+h1,
+p,
+a,
+div,
+section {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: table;
+    padding-top: 20%;
+    width: 100%;
+}
+
+.content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+h1 {
+    /*font-family: 'Hind', sans-serif, bold;*/
+    font-family: 'Roboto', sans-serif;
+    /*font-weight: 100;*/
+    font-size: 7.5em;
+    color: white;
+}
+
+p {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 1.6em;
+}
+
+a {
+    font-family: 'Khula', sans-serif;
+    font-size: 2.5em;
+    font-weight: 800;
+    /*margin-bottom: 1%;*/
+}
+
+.subtitle {
+    font-family: 'Khula', sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    /*color: #1E1E1E;*/
+    /*color: #505050;*/
+    color: #BCBCBC;
+    margin-bottom: 1%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-left: 0.3em;
+}
+
+.button:hover {
+    background-color: grey;
+}
+
+.button:active {
+    background-color: white;
+    color: black;
+}
+
+.footer {
+    display: table;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.icons {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.icon_each {
+    padding: 0 1% 0 1%;
+}
+
+.bgCover {
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    overflow: hidden;
+}
+
+.overlayBox {
+    position: absolute;
+    display: none;
+    width: 80%;
+    height: 60%;
+    /*background-color: #fff;*/
+}
+
+.overlayContent {
+    padding: 10px;
+    text-align: center;
+    line-height: 3em;
+}
+
+.closeLink {
+    float: right;
+    /*color: #000;*/
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    border: 1px solid;
+    padding: 0 2% 0 2%;
+}
+
+.links_to {
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 1.6em;
+    color: white;
+}
+
+.links_to:hover {
+    color: grey;
+}
+
+#web_works,
+#ios_works,
+#sound_works {
+    display: none;
+}
+
+#web_works {
+    margin-top: 2%;
+}
+
+#ios_works,
+#sound_works {
+    margin-top: -3%
+}
