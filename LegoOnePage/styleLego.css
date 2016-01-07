@@ -152,7 +152,13 @@ h2 {
 }
 
 @media screen and (max-width: 480px) {
-        #slide3, #slide3, #slide4, #slide5{
+    #slide2 {
+        height: 70%;
+    }
+    #slide3,
+    #slide3,
+    #slide4,
+    #slide5 {
         height: 75%;
     }
 }
@@ -163,8 +169,9 @@ h2 {
         margin-left: 5%;
         line-height: 1;
     }
-
-
+    .quotes {
+        margin: 16% 0;
+    }
 }
 
 @media screen and (max-width: 300px) {

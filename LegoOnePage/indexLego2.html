@@ -116,8 +116,28 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
     
-    <script type="text/javascript" src="Legojs.js">
-    </script>
+    <!-- <script type="text/javascript" src="Legojs.js">
+    </script> -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $('#nav li a').on('click', function(event) {
+        event.preventDefault();
+        var sectionID = $(this).attr("id");
+        scrollToID('#slide' + sectionID, 900);
+    });
+
+});
+
+
+function scrollToID(id, speed) {
+    var offSet = 50;
+    var speed= 950;
+    var targetOffset = $(id).offset().top - offSet;
+    $('html,body').animate({
+        scrollTop: targetOffset
+    }, speed);
+}
+</script>
 </body>
 
 </html>
