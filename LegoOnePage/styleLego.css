@@ -47,7 +47,7 @@ h2 {
     font-size: 22px;
     text-align: center;
     line-height: 1.5em;
-    margin: 50px 3%;
+    margin: 50px 10%;
     padding: 0 20px;
 }
 
@@ -151,7 +151,11 @@ h2 {
     color: #594F4F;
 }
 
-@media screen and (max-width: 767px) and (min-width: 460px) {}
+@media screen and (max-width: 480px) {
+        #slide3, #slide3, #slide4, #slide5{
+        height: 75%;
+    }
+}
 
 @media screen and (max-width: 354px) {
     #logo a {
@@ -159,6 +163,8 @@ h2 {
         margin-left: 5%;
         line-height: 1;
     }
+
+
 }
 
 @media screen and (max-width: 300px) {
