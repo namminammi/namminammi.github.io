@@ -156,22 +156,22 @@
 
         // make a function with action to update variable
         var update_variable = function() {
-                $('.range-control').each(function() {
-                    container = $(this);
-                    input = container.find('input');
-                    output = container.find('output');
-                    rangeWidth = input.width();
-                    thumbWidth = container.attr('data-thumbwidth');
-                    startValue = input.val();
-                    startOffset = ((rangeWidth - thumbWidth) / 100) * startValue;
-                    output
-                        .css({
-                            'left': startOffset
-                        });
-                    // console.log(startOffset);
-                });
-            };
-            // update variable after document ready
+            $('.range-control').each(function() {
+                container = $(this);
+                input = container.find('input');
+                output = container.find('output');
+                rangeWidth = input.width();
+                thumbWidth = container.attr('data-thumbwidth');
+                startValue = input.val();
+                startOffset = ((rangeWidth - thumbWidth) / 100) * startValue;
+                output
+                    .css({
+                        'left': startOffset
+                    });
+                // console.log(startOffset);
+            });
+        };
+        // update variable after document ready
         update_variable();
 
 
@@ -200,20 +200,41 @@
         // -the number is updated
         // -the thumb moves to offset value
 
+        // var update_num= Number($('output').text());
 
         $('.plus').on('click', function() {
-            $('output').text(Number($('output').text()) + 1);
+            var update_num = Number($('output').text());
+
+            if (update_num < 100) {
+                $('output').text(update_num + 1);
+            } else {
+                $('output').text(100);
+            }
+
+            // console.log(update_num);
+
             // console.log(offset);
 
         });
 
 
-        $('.minus').click(function() {
-            $('output').text(Number($('output').text()) - 1);
-            // update_variable();
+        $('.minus').on('click', function() {
+            var update_num_minus = Number($('output').text());
+
+            if (update_num_minus > 0) {
+                $('output').text(update_num_minus - 1);
+            } else {
+                $('output').text(0);
+            }
+
+            // console.log(update_num_minus);
+
+            // console.log(offset);
+
         });
 
 
+       
     });
     </script>
 </body>
