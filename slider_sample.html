@@ -196,45 +196,35 @@
         // update variable in window resize
         $(window).on('resize', update_variable);
 
-        // When plus button is pressed 
-        // -the number is updated
-        // -the thumb moves to offset value
 
-        // var update_num= Number($('output').text());
+var plus_minus= function() {
 
-        $('.plus').on('click', function() {
-            var update_num = Number($('output').text());
+var update_num = $('output').text()*1;
 
-            if (update_num < 100) {
-                $('output').text(update_num + 1);
-            } else {
-                $('output').text(100);
-            }
-
-            // console.log(update_num);
-
-            // console.log(offset);
-
-        });
+$('.plus').on('click', function() {
 
 
-        $('.minus').on('click', function() {
-            var update_num_minus = Number($('output').text());
+     if (update_num < 100) {
+        $('output').text(++update_num);
+        $('input').val(update_num).trigger('input');
+    } else {
+        $('output').text(100);
+    }
+    });
 
-            if (update_num_minus > 0) {
-                $('output').text(update_num_minus - 1);
-            } else {
-                $('output').text(0);
-            }
+$('.minus').on('click', function() {
+    if (update_num > 0) {
+        $('output').text(--update_num);
+        $('input').val(update_num).trigger('input');
+    } else {
+        $('output').text(0);
+    }
+});
+};
 
-            // console.log(update_num_minus);
-
-            // console.log(offset);
-
-        });
+plus_minus();
 
 
-       
     });
     </script>
 </body>
