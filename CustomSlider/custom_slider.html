@@ -147,84 +147,164 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript">
-    //hide/show slider number
-    $(document).ready(function() {
-        //hide number on thumb when mouse is over
-        var show_hide_num = function() {
-            $('.row').hover(function() {
-                $('#inputRange').removeClass('number-sign').addClass('no-number-sign');
-                $('output').fadeIn(500);
-            });
-        };
-        show_hide_num();
+$(document).ready(function() {
+  var show_hide_num = function() {
+    $('.row').hover(function() {
+      $('#inputRange').removeClass('number-sign').addClass('no-number-sign');
+      $('output').fadeIn(500);
 
-        //updates number and position of thumb
-        var update_num;
-        var update_range = function() {
-            var container, input, output, rangeWidth, thumbWidth, startValue, startOffset;
-
-            // make a function with action to update variable
-            var update_variable = function() {
-                $('.range-control').each(function() {
-                    container = $(this);
-                    input = container.find('input');
-                    output = container.find('output');
-                    rangeWidth = input.width();
-                    thumbWidth = container.attr('data-thumbwidth');
-                    startValue = input.val();
-                    startOffset = ((rangeWidth - thumbWidth) / 100) * startValue;
-                    output
-                        .css({
-                            'left': startOffset
-                        });
-                });
-            };
-            // update variable after document ready
-            update_variable();
-
-            // input input event to update thumb position
-            $('.range-control > input').on('input', function() {
-                var value = this.value;
-               	update_num= value;
-               	console.log(value);
-                offset = ((rangeWidth - thumbWidth) / 100) * value;
-
-                $(this).closest('.range-control').find('output')
-                    .val(value)
-                    .css({
-                        'left': offset
-                    });
-            });
-
-            // update variable in window resize
-            $(window).on('resize', update_variable);
-        };
-        update_range();
-
-        //update number & position of thumb when plus/minus buttons are clicked
-        var plus_minus = function() {
-
-             update_num = $('output').text() * 1;
-            $('.plus').on('click', function() {
-                if (update_num < 100) {
-                    $('output').text(++update_num);
-                    $('input').val(update_num).trigger('input');
-                } else {
-                    $('output').text(100);
-                }
-            });
-
-            $('.minus').on('click', function() {
-                if (update_num > 0) {
-                    $('output').text(--update_num);
-                    $('input').val(update_num).trigger('input');
-                } else {
-                    $('output').text(0);
-                }
-            });
-        };
-        plus_minus();
     });
+
+  };
+  show_hide_num();
+
+  var update_range = function() {
+    var container, input, output, rangeWidth, thumbWidth, startValue, startOffset;
+
+    // make a function with action to update variable
+    var update_variable = function() {
+      $('.range-control').each(function() {
+        container = $(this);
+        input = container.find('input');
+        output = container.find('output');
+        rangeWidth = input.width();
+        thumbWidth = container.attr('data-thumbwidth');
+        startValue = input.val();
+        startOffset = ((rangeWidth - thumbWidth) / 100) * startValue;
+        output
+          .css({
+            'left': startOffset
+          });
+      });
+    };
+    // update variable after document ready
+    update_variable();
+
+    // input input event
+    $('.range-control > input').on('input', function() {
+      var value = this.value;
+      offset = ((rangeWidth - thumbWidth) / 100) * value;
+
+      $(this).closest('.range-control').find('output')
+        .val(value)
+        .css({
+          'left': offset
+        });
+    });
+
+    // update variable in window resize
+    $(window).on('resize', update_variable);
+  };
+  update_range();
+
+  var plus_minus = function() {
+
+    var update_num = function() { return +$('output').text() };
+
+    $('.plus').on('click', function() {
+      if (update_num() < 100) {
+        $('output').text(update_num() + 1);
+        $('input').val(update_num()).trigger('input');
+      } else {
+        $('output').text(100);
+      }
+    });
+
+    $('.minus').on('click', function() {
+      if (update_num() > 0) {
+        $('output').text(update_num() - 1);
+        $('input').val(update_num()).trigger('input');
+      } else {
+        $('output').text(0);
+      }
+    });
+  };
+  plus_minus();
+});
+
+   //Alternative way
+
+    //hide/show slider number
+    // $(document).ready(function() {
+    //     //hide number on thumb when mouse is over
+    //     var show_hide_num = function() {
+    //         $('.row').hover(function() {
+    //             $('#inputRange').removeClass('number-sign').addClass('no-number-sign');
+    //             $('output').fadeIn(500);
+    //         });
+    //     };
+    //     show_hide_num();
+
+    //     //updates number and position of thumb
+    //     var update_num;
+    //     var update_range = function() {
+    //         var container, input, output, rangeWidth, thumbWidth, startValue, startOffset;
+
+    //         // make a function with action to update variable
+    //         var update_variable = function() {
+    //             $('.range-control').each(function() {
+    //                 container = $(this);
+    //                 input = container.find('input');
+    //                 output = container.find('output');
+    //                 rangeWidth = input.width();
+    //                 thumbWidth = container.attr('data-thumbwidth');
+    //                 startValue = input.val();
+    //                 startOffset = ((rangeWidth - thumbWidth) / 100) * startValue;
+    //                 output
+    //                     .css({
+    //                         'left': startOffset
+    //                     });
+    //             });
+    //         };
+    //         // update variable after document ready
+    //         update_variable();
+
+    //         // input input event to update thumb position
+    //         $('.range-control > input').on('input', function() {
+    //             var value = this.value;
+    //              update_num= value;
+    //              console.log(value);
+    //             offset = ((rangeWidth - thumbWidth) / 100) * value;
+
+    //             $(this).closest('.range-control').find('output')
+    //                 .val(value)
+    //                 .css({
+    //                     'left': offset
+    //                 });
+    //         });
+
+    //         // update variable in window resize
+    //         $(window).on('resize', update_variable);
+    //     };
+    //     update_range();
+
+    //     //update number & position of thumb when plus/minus buttons are clicked
+    //     var plus_minus = function() {
+
+    //          update_num = $('output').text() * 1;
+    //         $('.plus').on('click', function() {
+    //             if (update_num < 100) {
+    //                 $('output').text(++update_num);
+    //                 $('input').val(update_num).trigger('input');
+    //             } else {
+    //                 $('output').text(100);
+    //             }
+    //         });
+
+    //         $('.minus').on('click', function() {
+    //             if (update_num > 0) {
+    //                 $('output').text(--update_num);
+    //                 $('input').val(update_num).trigger('input');
+    //             } else {
+    //                 $('output').text(0);
+    //             }
+    //         });
+    //     };
+    //     plus_minus();
+    // });
+
+
+
     </script>
 </body>
 
