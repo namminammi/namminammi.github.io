@@ -1,0 +1,165 @@
+body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+    
+    .container {
+        height: 474px;
+        width: 248px;
+        background-color: #D6D6D6;
+        position: absolute;
+    }
+    
+    .headline-list {
+        height: 452px;
+        width: 224px;
+        margin: 12px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px 0px #949494;
+        position: absolute;
+    }
+    
+    .header {
+        background-color: #2D5F7F;
+        color: #fff;
+        font-size: 12px;
+        text-transform: uppercase;
+        margin: -15px 50px 0 17px;
+        position: relative;
+        z-index: 10;
+    }
+    
+    h2 {
+        padding: 7px 15px;
+    }
+    /*Header fix for Firefox & Opera*/
+
+    html>body h2 { padding: 7px 14px; }
+    
+    @-moz-document url-prefix() {
+        h2 {
+            padding: 7px 14px;
+        }
+    }
+    /*End*/
+    
+    .content {
+        font-family: futura;
+        margin: -27px 0 0 -20px;
+        display: block;
+        height: 394px;
+        overflow: hidden;
+    }
+    
+    h5 {
+        margin: 10px 0 !important;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    .itemWrapper {
+        width: 190px;
+        border-bottom: 1px solid #CCC;
+    }
+    
+    a {
+        color: #000;
+    }
+    
+    .controls {
+        height: 90px;
+        margin-top: -74px;
+        z-index: 10;
+        position: relative;
+        padding: 0 21px;
+        width: 85%;
+    }
+    
+    .gradient-bottom {
+        position: relative;
+        height: 90px;
+        top: -102px;
+        z-index: 5;
+        background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+    
+    .gradient-top {
+        display: none;
+        height: 90px;
+        position: relative;
+        top: -405px;
+        background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+    
+    #prev {
+        display: none;
+    }
+    
+    #moreBtn {
+        display: block;
+        font-size: 15px;
+        position: relative;
+        top: 76px;
+        left: 1px;
+        border-top: 1px solid #ccc;
+        color: rgb(45, 95, 130);
+        height: 30px;
+        background-color: #fff;
+    }
+    
+    .moreBtnLabel {
+        position: relative;
+        bottom: 4px;
+        padding-left: 62px;
+    }
+    
+    polygon {
+        fill: rgb(45, 95, 130);
+    }
+    
+    #upDownBtn {
+        display: none;
+        position: relative;
+        top: 77px;
+        border-top: 1px solid #ccc;
+    }
+    
+    .arrowUpBtn {
+        border-right: 1px solid #ccc;
+        position: relative;
+        bottom: 14px;
+    }
+    
+    .arrowDownBtn {
+        position: relative;
+        bottom: 14px;
+    }
+    
+    .arrowDown {
+        transform: rotate(90deg);
+    }
+    
+    #lastPageUpBtn {
+        display: none;
+        width: 100%;
+        height: 30px;
+        font-size: 15px;
+        color: rgb(45, 95, 130);
+        background-color: #fff;
+        position: relative;
+        top: 76px;
+        left: -1px;
+        border-top: 1px solid #ccc;
+    }
+    
+    .lastPageUpBtnLabel {
+        position: relative;
+        bottom: 4px;
+        left: 8px;
+    }
