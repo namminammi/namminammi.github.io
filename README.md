@@ -1,9 +1,9 @@
 # namminammi.github.io
 
-Nam Choi's Front End & iOS Development projects
+Nam Choi's Front End Projects and challenges
 
 HTML/CSS/Javascript 
-Jquer/Bootstrap/Angular
+Jquery/Bootstrap/Angular
 
 responsive images & text
 
