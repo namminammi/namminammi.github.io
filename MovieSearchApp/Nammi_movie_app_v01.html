@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <style>
+    <style>
     body {
         font-family: 'Oxygen', sans-serif;
     }
@@ -69,8 +69,6 @@
         margin: 10px 0;
         border: 1px solid grey;
         width: 90%;
-        /*width: 240px;*/
-        /*height: 368px;*/
     }
     
     .movieDetail_actors {
@@ -118,11 +116,9 @@
         padding: 10px;
     }
     </style>
-    
 </head>
 
 <body>
-
     <div class="appPageTitle">
         <h1>Movie Search App</h1>
         <p>Search movies, actors, and their popular movies.</p>
@@ -130,8 +126,8 @@
     <div class="container-fluid">
         <div class="row-fluid btnContainer">
             <div id="searchBtnContainer" class="col-xs-6">
-                <input id="movie" type="text" placeholder="Search for a movie" />
-                <button>Search</button>
+                <input id="movie" type="text" name="searchMovies" placeholder="Search for a movie" />
+                <button id="searchBtn">Search</button>
             </div>
             <div id="refreshBtnContainer" class="col-xs-6">
                 <input id="refreshBtn" type="button" value="Refresh Page & Start Again">
@@ -158,256 +154,224 @@
     <script>
     $(document).ready(function() {
 
-// Variables to fetch urls from API
-var url = 'http://api.themoviedb.org/3/',
-    mode = 'search/movie?query=',
-    query = '?query=',
-    search = 'search/',
-    movie = 'movie',
-    person = 'person',
-    person_id,
-    movie_credits = 'movie_credits?',
-    input,
-    titleItems,
-    movieName,
-    movie_id,
-    actorNames,
-    actor_id,
-    credits = 'credits?',
-    key = '&api_key=f8c4016803faf5e7f424abe98a04b8d9',
-    sort_by = '&sort_by=original_title.desc',
-    page = '&page=3';
+        //Search input focused at the page load
+        $("#movie").focus();
 
-
-//Link to search movies:
-//https://api.themoviedb.org/3/search/movie?api_key=f8c4016803faf5e7f424abe98a04b8d9&query=Jack+Reacher
-
-//Link to get movie detail from search:
-//https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
-
-//Link to get the cast and crew for a movie : /movie/{movie_id}/credits
-//https://api.themoviedb.org/3/movie/550/credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
-
-//Link to get actor's credit /person/{person_id}/movie_credits
-// https://api.themoviedb.org/3/person/87345/movie_credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
+        //Button to refresh page and start search over
+        $('#refreshBtn').click(function() {
+            location.reload();
+        });
 
 
 
-//Button to refresh page and clear page
-$('#refreshBtn').click(function() {
-    location.reload();
-});
+        // Variables to fetch urls from API
+        var baseUrl = 'http://api.themoviedb.org/3/',
+            discover = 'discover/',
+            mode = 'search/movie',
+            query = '?query=',
+            ampQuery = '&query=',
+            search = 'search/',
+            sort_by_popularity = '&sort_by=popularity.desc',
+            movieQuery = 'movie?',
+            movie = 'movie',
+            person = 'person',
+            person_id,
+            movie_credits = 'movie_credits?',
+            input,
+            titleItems,
+            movieName,
+            movie_id,
+            actorNames,
+            actor_id,
+            with_people = "&with_people=",
+            credits = 'credits?',
+            key = '&api_key=f8c4016803faf5e7f424abe98a04b8d9',
+            sort_by = '&sort_by=original_title.desc',
+            page = '&page=3';
+
+
+        //API to discover items by a feature:
+        // https://www.themoviedb.org/documentation/api/discover
+
+        // https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc
+
+        //Link to search movies:
+        //https://api.themoviedb.org/3/search/movie?api_key=f8c4016803faf5e7f424abe98a04b8d9&query=Jack+Reacher
+
+        //Link to get movie detail from search:
+        //https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
+
+        //Link to get the cast and crew for a movie : /movie/{movie_id}/credits
+        //https://api.themoviedb.org/3/movie/550/credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
+
+        //Link to get actor's credit /person/{person_id}/movie_credits
+        // https://api.themoviedb.org/3/person/87345/movie_credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
+
+
+        // URL: /discover/movie?with_people=108916&sort_by=popularity.desc
 
 
 
 
+        // 1) Search movie:
 
-// 1) Search movie:
-
-//Ex. URL to search movies:
-//https://api.themoviedb.org/3/search/movie?api_key=f8c4016803faf5e7f424abe98a04b8d9&query=Jack+Reacher
-
-
-//Search button to show results
-$('#searchBtnContainer').on('click', 'button', function() {
-
-    var input = $('#movie').val(),
-        movieName = encodeURI(input);
-    $.ajax({
-            type: 'GET',
-            url: url + mode + input + key + sort_by + page,
-            async: false,
-            jsonpCallback: 'test',
-            contentType: 'application/json',
-            dataType: 'jsonp',
-            success: function(json) {
+        //Ex. URL to search movies
+        // https://api.themoviedb.org/3/movie/550?api_key=f8c4016803faf5e7f424abe98a04b8d9&sort_by=popularity.desc
 
 
-                for (i = 0; i < json.results.length; i++) {
-                    titleItems = json.results[i].title;
-                    movie_id = json.results[i].id;
-                    posterItems = json.results[i].poster_path;
+        //using /discover
+        // https://api.themoviedb.org/3/discover/movie?api_key=f8c4016803faf5e7f424abe98a04b8d9&query=Jack+Reacher&sort_by=popularity.desc
 
 
-                    $(".movieCard").append("<div class=" + "movieTitle" + " " + "id=" + movie_id + ">" + "<img " + "class=" + "posterImg" + " " + "src=" + "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + posterItems + " />" + "<br>" + "<div class=" + "searchFilmTitles" + ">" + titleItems + "</div>" + "</div>" + "</br>");
+        //Search button to show results
+        $('#searchBtnContainer').on('click', 'button', function() {
+
+            var input = $('#movie').val(),
+                movieName = encodeURI(input);
+            $.ajax({
+                type: 'GET',
+                url: baseUrl + mode + query + input + key + sort_by_popularity,
+                async: false,
+                jsonpCallback: 'test',
+                contentType: 'application/json',
+                dataType: 'jsonp',
+                success: function(json) {
+
+
+                    for (i = 0; i < json.results.length; i++) {
+                        titleItems = json.results[i].title;
+                        movie_id = json.results[i].id;
+                        posterItems = json.results[i].poster_path;
+
+                        $(".movieCard").append("<div class=" + "movieTitle" + " " + "id=" + movie_id + ">" + "<img " + "class=" + "posterImg" + " " + "src=" + "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + posterItems + " />" + "<br>" + "<div class=" + "searchFilmTitles" + ">" + titleItems + "</div>" + "</div>" + "</br>");
+
+                    }
+
+                },
+                error: function(e) {
+                    console.log(e.message);
                 }
 
-            },
-            error: function(e) {
-                console.log(e.message);
+
+
+            });
+
+
+            // Shows warning message when there is no result
+            setTimeout(function() {
+                if ($(".movieCard").has(".movieTitle").length == 0) {
+                    $("#noMatch").css('display', 'block');
+                } else {
+                    $("#noMatch").css('display', 'none');
+                }
+            }, 200);
+
+
+            //End of button click function
+        });
+
+
+
+        //Search button triggered with enter key:
+        $('#searchBtnContainer').on('keyup', 'input', function(e) {
+            if (e.keyCode == 13) {
+                $('#searchBtn').trigger('click');
+                return false;
             }
+        });
+
+
+        //Clears out search result when input field is focused or input value is changed
+        $("#movie").on("change keyup paste", function() {
+            $('#showSearchResult div').empty();
+        });
+
+
+
+
+
+        // 2) Show movie detail with name of actors///
+        //Get the cast and crew for a movie : /movie/{movie_id}/credits
+        //https://api.themoviedb.org/3/movie/550/credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
+
+        $('.movieCard').on("click", '.movieTitle', function(event) {
+
+            var selectedMovie_id = this.id;
+            var selectedMovieTitle = this.innerText;
+
+            $('.movieDetail_actors').css('display', 'inline');
+            $("#showSearchResult").css('display', 'none');
+
+            $.ajax({
+                type: 'GET',
+                url: baseUrl + movie + "/" + selectedMovie_id + "/" + credits + key,
+                async: false,
+                jsonpCallback: 'test',
+                contentType: 'application/json',
+                dataType: 'jsonp',
+                success: function(json) {
+
+                    $(".chosenTitle").append("<div class=" + "movieTitle_detailView" + " " + "id=" + selectedMovie_id + ">" + "<span>" + selectedMovieTitle + "</span>" + "</div>");
+
+                    for (j = 0; j < json.cast.length; j++) {
+                        actorNames = json.cast[j].name;
+                        actor_id = json.cast[j].id;
+                        actorImgItem = json.cast[j].profile_path;
+
+                        $(".movieDetail_actors").append("<div class=" + "actorsFeatured" + " " + "id=" + actor_id + ">" + "<img " + "class=" + "actorImg" + " " + "src=" + "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + actorImgItem + " />" + "<br>" + actorNames + " " + "</div>");
+                    }
+                },
+                error: function(e) {
+                    console.log(e.message);
+                }
+            });
+        });
+
+
+        // 3) Show Top 10 movies by chosen actor///
+
+        // Ex: URL to show popular movies by selected actor
+        // https://api.themoviedb.org/3/discover/movie?api_key=f8c4016803faf5e7f424abe98a04b8d9&with_people=108916&sort_by=popularity.desc
+
+
+        $('.movieDetail_actors').on("click", '.actorsFeatured', function(event) {
+            $('.actorShowTopMovies').css('display', 'block');
+            $(".movieShowActors").css('display', 'none');
+
+            var selectedActor_id = this.id;
+            var selected_actorName = this.innerText;
+
+            $.ajax({
+                type: 'GET',
+                url: baseUrl + discover + movieQuery + key + with_people + selectedActor_id + sort_by_popularity,
+                async: false,
+                jsonpCallback: 'test',
+                contentType: 'application/json',
+                dataType: 'jsonp',
+                success: function(json) {
+
+                    $(".actorPageTitle").append("<div class=" + "actorShowName" + " " + "id=" + selectedActor_id + ">" + "<span>" + selected_actorName + "</span>" + "</div>");
+
+                    for (p = 0; p < json.results.length; p++) {
+                        // console.log(json.cast[p].title);
+                        var actors_film_id = json.results[p].id;
+                        var actorFilms = json.results[p].title;
+                        var actorFilmPosterImg = json.results[p].poster_path;
+
+                        $(".actorPopMovies").append("<div class=" + "actorPopMoviesList" + " " + "id=" + actors_film_id + ">" + "<img " + "class=" + "posterImg" + " " + "src=" + "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + actorFilmPosterImg + " />" + "<br>" + "<div class= " + "actorFilmTitles" + ">" + actorFilms + "</div>" + "</div>");
+                    }
+
+                },
+                error: function(e) {
+                    console.log(e.message);
+                }
+            });
 
         });
 
 
-    //End of button click function
-});
 
-
-/***** Bugs to be fixed *****/
-/*Clears out the search result when input is in focus
-$('#movie').keyup(function() {
-		  	if ($(this).val().length == 0) {
-		    $('#showSearchResult div').empty();
-		    // $('#noMatch').css('display', 'none');
-		  } 
-		  else {
-		    $('#showSearchResult div').show();
-		    $('#noMatch').css('display', 'none');
-		  }
-		}).keyup();
-
-
-If there is no search result show warning message:
-$('#searchBtnContainer').on('click','button',function() {
-	console.log($('.movieCard').text());
-	console.log($('.movieTitle').length);
-
-
-	if($('.movieCard').text() == "" ){
-		console.log("sometext");
-		$("#noMatch").css('display', 'none');
-	}
-
-	else if ($('.movieCard').text() !== "" ){
-		console.log("no text")
-		$("#noMatch").css('display', 'block');
-	}
-
-});
-
-disable another search if .movieCard has value
-
-if($('.movieCard').text() !=="" ){
-	 $("#searchBtnContainer button").attr("disabled", true);
-} else if ($('#movie').is(':focus')){
-	$("#searchBtnContainer button").attr("disabled", false);
-}*/
-
-
-
-
-
-//Clears out search result when input field is focused
-$('#movie').focus(function() {
-    console.log("focused")
-    if ($(this).val().length == 0) {
-        $('#showSearchResult div').empty();
-        // $('#noMatch').css('display', 'none');
-    } else {
-        // $('#noMatch').css('display', 'none');
-        $('#showSearchResult div').show();
-    }
-});
-
-
-// 2) Show movie detail with name of actors///
-//Get the cast and crew for a movie : /movie/{movie_id}/credits
-//https://api.themoviedb.org/3/movie/550/credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
-
-$('.movieCard').on("click", '.movieTitle', function(event) {
-
-    var selectedMovie_id = this.id;
-    var selectedMovieTitle = this.innerText;
-
-    $('.movieDetail_actors').css('display', 'inline');
-    $("#showSearchResult").css('display', 'none');
-
-    $.ajax({
-        type: 'GET',
-        url: url + movie + "/" + selectedMovie_id + "/" + credits + key,
-        async: false,
-        jsonpCallback: 'test',
-        contentType: 'application/json',
-        dataType: 'jsonp',
-        success: function(json) {
-
-            $(".chosenTitle").append("<div class=" + "movieTitle_detailView" + " " + "id=" + selectedMovie_id + ">" + "<span>" + selectedMovieTitle + "</span>" + "</div>");
-
-            for (j = 0; j < json.cast.length; j++) {
-                actorNames = json.cast[j].name;
-                actor_id = json.cast[j].id;
-                actorImgItem = json.cast[j].profile_path;
-
-                $(".movieDetail_actors").append("<div class=" + "actorsFeatured" + " " + "id=" + actor_id + ">" + "<img " + "class=" + "actorImg" + " " + "src=" + "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + actorImgItem + " />" + "<br>" + actorNames + " " + "</div>");
-            }
-        },
-        error: function(e) {
-            console.log(e.message);
-        }
-    });
-});
-
-
-// 3) Show Top 10 movies by chosen actor///
-
-// Most popular movies starring an actor not possible now:
-// https://www.themoviedb.org/talk/5400707ac3a368436c001598
-
-//https://www.themoviedb.org/talk/51742ec8760ee3470c4bd73f
-// But it's how it's done on their website
-// I take all of the movies from a person and order them by number of ratings and order them desc. This gives a fairly accurate guide to what the most "famous" movies a person is known for.
-
-// The /search/person method returns the "known for" items. This may be of some help.
-// http://api.themoviedb.org/3/search/person?query=brad+pitt&api_key=f8c4016803faf5e7f424abe98a04b8d9
-//http://api.themoviedb.org/3/search/person?query=Jessica%20Alba&api_key=f8c4016803faf5e7f424abe98a04b8d9
-
-//To get person credit /person/{person_id}/movie_credits
-// https://api.themoviedb.org/3/person/87345/movie_credits?api_key=f8c4016803faf5e7f424abe98a04b8d9
-//"original_title"
-
-
-$('.movieDetail_actors').on("click", '.actorsFeatured', function(event) {
-    $('.actorShowTopMovies').css('display', 'block');
-    $(".movieShowActors").css('display', 'none');
-
-    var selectedActor_id = this.id;
-    var selected_actorName = this.innerText;
-
-    $.ajax({
-        type: 'GET',
-        //url to return "known for" items
-        // url: url + search + person + query + selected_actorName + key,
-
-        //url to fetch all movies by selected actor
-        url: url + person + "/" + selectedActor_id + "/" + movie_credits + key,
-
-        async: false,
-        jsonpCallback: 'test',
-        contentType: 'application/json',
-        dataType: 'jsonp',
-        success: function(json) {
-
-            $(".actorPageTitle").append("<div class=" + "actorShowName" + " " + "id=" + selectedActor_id + ">" + "<span>" + selected_actorName + "</span>" + "</div>");
-
-            for (p = 0; p < json.cast.length; p++) {
-                // console.log(json.cast[p].title);
-                var actors_film_id = json.cast[p].id;
-                var actorFilms = json.cast[p].title;
-                var actorFilmPosterImg = json.cast[p].poster_path;
-
-                $(".actorPopMovies").append("<div class=" + "actorPopMoviesList" + " " + "id=" + actors_film_id + ">" + "<img " + "class=" + "posterImg" + " " + "src=" + "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + actorFilmPosterImg + " />" + "<br>" + "<div class= " + "actorFilmTitles" + ">" + actorFilms + "</div>" + "</div>");
-            }
-/*To fetch actor's list of "known for" movies query:   
-for(l=0;l<json.results.length; l++){
-for(m=0; m<json.results[l].known_for.length; m++){
-console.log(json.results[l].known_for[m].original_title)
-}                
-// $(".actorPopMovies").append("<div class=" + "actorPopMoviesList"+ " " + "id=" + actors_film_id + ">"  + "<span>" + actorFilms + " " + actors_film_id + "</span>" + "</div>" + "</br>");
-// $(".actorPopMoviesList").addClass("col-xs-3 col-sm-3 col-md-2 col-ls-2");
-}*/
-
-        },
-        error: function(e) {
-            console.log(e.message);
-        }
-    });
-
-});
-
-
-
-    //End of Document.ready
+        //End of Document.ready
     });
     </script>
 </body>
