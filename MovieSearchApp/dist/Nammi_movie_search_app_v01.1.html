@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Search App</title>
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+    <script src="js/main.min.js"></script>
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+    <div class="appPageTitle">
+        <h1>Movie Search App</h1>
+        <p>Search movies, actors, and their popular movies.</p>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid btnContainer">
+            <div id="searchBtnContainer" class="col-xs-6">
+                <input id="movie" type="text" name="searchMovies" placeholder="Search for a movie" />
+                <button id="searchBtn">Search</button>
+            </div>
+            <div id="refreshBtnContainer" class="col-xs-6">
+                <input id="refreshBtn" type="button" value="Refresh Page & Start Again">
+            </div>
+        </div>
+    </div>
+    <div id="noMatch">There are no movies that matched your query.</div>
+    <div class="container-fluid" id="showSearchResult">
+        <div class="row movieCard">
+        </div>
+    </div>
+    <div class="container-fluid movieShowActors">
+        <div class="chosenTitle"></div>
+        <div class="row-fluid">
+            <div class="movieDetail_actors"></div>
+        </div>
+    </div>
+    <div class="container-fluid actorShowTopMovies">
+        <div class="actorPageTitle"></div>
+        <div class="row-fluid">
+            <div class="actorPopMovies"></div>
+        </div>
+    </div>
+</body>
+
+</html>
