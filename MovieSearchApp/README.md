@@ -8,11 +8,11 @@ An app to search movies and actors associated with them, and their featured work
 
 How to use it:  <br />
 
-1)The user types into search field and clicks Search button to start the process. <br />  
-2)It should display movies from search result, showing their poster images and titles in a card. <br /> 
-3)When a movie card is clicked it directs to show the actors who worked in that movie. <br />
-4)When the actor's card is clicked it shows the films that the selected actor worked so far.  <br /> 
-5)To start the process again the user should press Refresh & Start Again button. <br />       
+1) The user types into search field and clicks Search button to start the process. <br />
+2) It should display movies from search result, showing their poster images and titles in a card. <br /> 
+3) When a movie card is clicked it directs to show the actors who worked in that movie. <br />
+4) When the actor's card is clicked it shows the films that the selected actor worked so far.  <br /> 
+5) To start the process again the user should press Refresh & Start Again button. <br />       
 
 
 
