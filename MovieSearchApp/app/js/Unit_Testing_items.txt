@@ -1,0 +1,31 @@
+What to Test:
+
+1) On document ready:
+  a) "#movie" should be on focus
+  b) when "#refreshBtn" is clicked the page(location) is loaded
+
+2) Search Btn:
+  a) "#searchBtn" should be triggered with Enter Key
+  b) "#movie" input clears out when input field is focused/input value is changed
+  c) when "#searchBtn" is clicked it makes ajax call using jsonp
+  d) ".movieTitle" should be appended to ".movieCard"
+  e) setTimeout shows warning message when there is no result
+
+3) .movieCard showing actors associated to the clicked movie:
+   on click of movieTitle:
+    a) "#showSearchResult" should be display:none
+    b) "#movieDetail_actors" should be display: inline
+    c) makes ajax call using jsonp
+    d) ".movieTitle_detailView" should be appended to ".chosenTitle"
+    e) ".actorsFeatured" should be appended to ".movieDetail_actors"
+
+4) .actorsFeatured showing top 10 movies associated to the clicked actor:
+	a) ".actorShowTopMovies" should be display:block
+	b) ".movieShowActors" should be display:none
+	c) should make ajax call using jsonp
+	d) should show actors name in ".actorPageTitle"
+	e) should append ".actorPopMoviesList" to ".actorPopMovies" 
+
+
+
+Mocha - Chai/Chai-jquery - Sinon - Cheerio
