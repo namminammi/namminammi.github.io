@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 2 by Nam Choi</title>
+</head>
+
+<body>
+    <style>
+    li {
+        list-style: none;
+    }
+    
+    #accordion h2 {
+        font-size: 12pt;
+        margin: 0px;
+        padding: 10px;
+        background: #ccc;
+        border: 1px solid #fff;
+        float: left;
+    }
+    
+    #accordion h2:hover {
+        background-color: #f9f9f9;
+    }
+    
+    #accordion li div.content {
+        display: none;
+        padding: 10px;
+        background: #f9f9f9;
+        border: 1px solid #fff;
+        position: fixed;
+        top: 130px;
+        left: 46px;
+        right: 46px;
+    }
+    
+    #accordion li:hover div.content {
+        display: inherit;
+    }
+    
+    @media only screen and (max-width:768px) {
+        #wrap {
+            margin: 10px auto;
+            width: 100%;
+            line-height: 1.6em;
+        }
+        #accordion {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        #accordion li div.content {
+            position: initial;
+        }
+        #accordion h2 {
+            float: none;
+        }
+    }
+    
+    #test {
+        top: 100px;
+        height: 300px;
+        width: 300px;
+    }
+    </style>
+    <h1>Task 2</h1>
+    <div id="wrap">
+        <ul id="accordion">
+            <li>
+                <h2 tab="tab1">Title One</h2>
+                <div class="content" id="content">
+                </div>
+            </li>
+            <li>
+                <h2 tab="tab2">Title Two</h2>
+                <div class="content" id="content">
+                </div>
+            </li>
+            <li>
+                <h2 tab="tab3">Title Three</h2>
+                <div class="content" id="content">
+                </div>
+            </li>
+            <li>
+                <h2 tab="tab4">Title Four</h2>
+                <div class="content" id="content">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("h2").hover(function() {
+            $(".content").load("contents/" + $(this).attr("tab") + ".html");
+        });
+    });
+    </script>
+</body>
+
+</html>
