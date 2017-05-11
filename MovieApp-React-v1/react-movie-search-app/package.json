@@ -18,5 +18,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-    "homepage": "https://namminammi.github.io/react-movie-search-app"
+    "homepage": "http://namminammi.github.io/react-movie-search-app"
 }
