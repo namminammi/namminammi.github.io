@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 1 by Nam Choi</title>
+</head>
+
+<body>
+    <style>
+    li {
+        list-style:none;
+    }
+
+    #accordion h2 {
+        font-size: 12pt;
+        margin: 0px;
+        padding: 10px;
+        background: #ccc;
+        border: 1px solid #fff;
+        float:left;
+    }
+    #accordion h2:hover {
+        background-color: #f9f9f9;
+    } 
+
+    #accordion li div.content {
+        display: none;
+        padding: 10px;
+        background: #f9f9f9;
+        border: 1px solid #fff;
+        position: fixed;
+        top:130px;
+        left:46px;
+    }
+    
+    #accordion li:hover div.content {
+        display: inherit;
+    }
+
+
+    @media only screen and (max-width:768px){
+     #wrap {
+    margin: 10px auto;
+    width: 100%;
+    line-height: 1.6em;
+    }
+    
+    #accordion {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #accordion li div.content {
+        position: initial;
+    }
+    
+    #accordion h2 {
+        float:none;
+    }
+
+    }
+
+   
+
+
+
+    </style>
+<h1>Task 1: Accordion/Tab component (no JS)</h1>
+
+
+    <div id="wrap">
+        <ul id="accordion">
+            <li>
+                <h2>Title One</h2>
+                <div class="content">
+                    ONE ONE ONE ONE ONE ONEONE ONE ONEONE ONE ONEONE ONE ONEONE ONE ONEONE
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </li>
+            <li>
+                <h2>Title Two</h2>
+                <div class="content">
+                    TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO TWO 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </li>
+            <li>
+                <h2>Title Three</h2>
+                <div class="content">
+                    THREE THREE THREE THREE THREE THREE THREE THREE THREE THREE THREE THREE
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </li>
+            <li>
+                <h2>Title Four</h2>
+                <div class="content">
+                    FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR FOUR 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- wrap -->
+</body>
+
+</html>

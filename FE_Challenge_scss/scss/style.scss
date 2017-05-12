@@ -1,0 +1,748 @@
+	$text__family: "GothamHTF";
+    
+    body{
+      font-family: $text__family;
+    }
+
+    .Market-place {
+        width: 1440px;
+        height: 1481px;
+        background-color: #f0f2f4;
+    }
+    
+    .Content {
+        width: 1194px;
+        height: 1481px;
+        background-color: #ffffff;
+    }
+    
+    .Menu_Open-Offerings-4 {
+        width: 96px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #323232;
+        white-space: nowrap;
+        margin-top: 25px;
+        margin-left: 412px;
+        display: inline-block;
+        padding-right: 15px;
+    }
+    
+    .Menu_Upcoming-Offerings {
+        width: 118px;
+        height: 17px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #323232;
+        white-space: nowrap;
+        display: inline-block;
+        border-left: solid 1px #c8c8c8;
+        border-right: solid 1px #c8c8c8;
+        padding-left: 15px;
+        padding-right: 12px;
+    }
+    
+    .Menu_Past-Offerings-38 {
+        width: 96px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #323232;
+        white-space: nowrap;
+        display: inline-block;
+        padding-left: 15px;
+    }
+   
+    .GreenBar {
+        width: 920px;
+        height: 45px;
+        border-radius: 2px;
+        background-color: #009a57;
+        margin-top: 40px;
+        margin-left: 136px;
+    }
+    
+    .GreenBar_Open-Offerings-left {
+        width: 105px;
+        height: 14px;
+        font-size: 13.5px;
+        font-weight: 500;
+        line-height: 1.04;
+        text-align: left;
+        color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15.3px;
+    }
+    
+    .GreenBar_Open-Offerings-right {
+        width: 104px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #ffffff;
+        float: right;
+        margin-top: -15px;
+    }
+    
+    .LightGreyBar {
+        width: 894px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #f2f4f6;
+        margin-left: 150px;
+    }
+    
+    .LightGreyBar_WEVE-RETURNED-70 {
+        width: 433px;
+        height: 11px;
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        font-size: 10px;
+        font-weight: 500;
+        color: #000000;
+        padding-top: 12px;
+        margin-left: 150px;
+    }
+    
+    .Block1 {
+        width: 920px;
+        height: 364px;
+        object-fit: contain;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: solid 0.5px #c8c8c8;
+        margin-left: 137px;
+        margin-top: 30px;
+    }
+    
+    .ItemTitle_LEGAL {
+        width: 35px;
+        height: 10px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1;
+        color: #969696;
+        text-transform: uppercase;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    
+    .Group-2 {
+        width: 31px;
+        height: 31px;
+        object-fit: contain;
+        float: right;
+        margin: 15px;
+    }
+    
+    .ItemStatus_ONLY-9-LEFT {
+        width: 80px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #d0021b;
+        text-transform: uppercase;
+        float: right;
+        white-space: nowrap;
+        margin-right: 5px;
+        margin-top: 25px;
+    }
+    
+    .ItemInfo_Accelerated-Pre-Sett {
+        width: 241px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        color: #3299ff;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    
+    .ItemText_LawCash-is-pleased-t {
+        width: 566px;
+        height: 54px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #000000;
+        line-height: 1.5;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    
+    .ItemInterest_SOLD {
+        width: 53px;
+        height: 11px;
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        text-align: right;
+        color: #323232;
+        text-transform: uppercase;
+        white-space: nowrap;
+        float: right;
+        margin-right: 207px;
+        line-height: 2;
+    }
+    
+    .-SOLD .text-style-1 {
+        font-weight: 500;
+    }
+    
+    .Rectangle-5 {
+        width: 382px;
+        height: 34px;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .ProgressBar {
+        width: 245px;
+        height: 5px;
+        border-radius: 100px;
+        background-color: #e6e8ea;
+    }
+    
+    .ProgressBar-dark {
+        width: 92px;
+        height: 5px;
+        background-color: #323436;
+    }
+    
+    .DarkGreyDiv {
+        width: 609px;
+        height: 34px;
+        border-radius: 2px;
+        background-color: #323436;
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+    
+    .Rectangle-12 {
+        width: 1194px;
+        height: 1481px;
+        background-color: #ffffff;
+    }
+    
+    .DarkGreyDiv-info {
+        width: 382px;
+        height: 34px;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.2);
+        float: right;
+    }
+    
+    .DarkGreyDiv-PREFUNDED {
+        width: 78px;
+        height: 13px;
+        font-size: 12px;
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-left: 71.5px;
+        margin-top: 10px;
+        float: left;
+    }
+    
+    .DarkGreyDiv-This-offer-is-prefun {
+        width: 337px;
+        height: 15px;
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        line-height: 1.5;
+        color: #ffffff;
+        white-space: nowrap;
+        margin-top: 9px;
+        margin-left: 15px;
+    }
+    
+    .photo-1459597093177-5c47509d2d-5 {
+        width: 225px;
+        height: 137px;
+        object-fit: contain;
+        margin-left: 17px;
+    }
+    
+    .ItemInfoDetail {
+        width: 382px;
+        height: 138px;
+        opacity: 0.9;
+        border-radius: 2px;
+        background-color: #f2f4f6;
+        float: right;
+        margin-right: 296px;
+    }
+    
+    .ItemInfoDetail-Annual-interest-Copy-5 {
+        width: 94px;
+        height: 12px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1;
+        color: #000000;
+        margin-left: 15px;
+        margin-top: 15px;
+        display: inline-block;
+    }
+    
+    .ItemInfoDetail-layer {
+        width: 19px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        color: #000000;
+        display: inline-block;
+        margin-left: 30px;
+    }
+    
+    .ItemInfoDetail-Underlying-security-Copy-5 {
+        width: 120px;
+        height: 12px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1;
+        color: #000000;
+        margin-left: 15px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    
+    .ItemInfoDetail-Multi-Use-Building {
+        width: 128px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        color: #000000;
+        margin-top: 20px;
+        display: inline-block;
+        margin-left: -2px;
+    }
+    
+    .ItemInfoDetail-Payments-Copy-5 {
+        width: 62px;
+        height: 12px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1;
+        color: #000000;
+        margin-left: 15px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    
+    .ItemInfoDetail-Monthly {
+        width: 49px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        color: #000000;
+        margin-top: 20px;
+        display: inline-block;
+        margin-left: 60px;
+    }
+    
+    .ItemInfoDetail-Term-remaining-Copy-5 {
+        width: 95px;
+        height: 12px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1;
+        color: #000000;
+        margin-left: 15px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    
+    .ItemInfoDetail-of-17-mo {
+        width: 71px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        text-align: center;
+        color: #000000;
+        margin-top: 20px;
+        display: inline-block;
+        margin-left: 25px;
+    }
+    
+    .Price-and-Invest {
+        float: right;
+        margin-top: -215px;
+        margin-right: 15px;
+    }
+    
+    .Price-and-Invest-copy {
+        width: 119px;
+        height: 21px;
+        font-family: GothamHTF-Book;
+        font-size: 20px;
+        text-align: right;
+        color: #000000;
+    }
+    
+    .Price-and-Invest-LEFT-OF-10M {
+        width: 74px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #646464;
+        text-transform: uppercase;
+        white-space: nowrap;
+        float: right;
+        margin-right: 10px;
+        margin-bottom: 17px;
+        margin-top: 5px;
+    }
+    
+    .Price-and-Invest-MINIMUM-Copy {
+        width: 48px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        text-align: right;
+        color: #646464;
+        text-transform: uppercase;
+        float: right;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+    
+    .Action-button {
+        width: 112px;
+        height: 32px;
+        border-radius: 2px;
+        background-color: #fedc3d;
+        float: right;
+        margin-top: 18px;
+    }
+    
+    .Action-button-INVEST-NOW {
+        width: 82px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        color: #000000;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 10px 15px;
+    }
+    
+    .OvalDiv {
+        width: 25px;
+        height: 25px;
+        background-color: #f3f5f6;
+        border-radius: 25px /25px;
+        margin-left: 15px;
+    }
+    
+    .Oval {
+        width: 25px;
+        height: 25px;
+        background-color: #f3f5f6;
+        border: solid 1px #ffffff;
+        border-radius: 25px /25px;
+        margin-left: 28px;
+        margin-top: -25.5px;
+    }
+    
+    .Log-in-to-see-who {
+        width: 194px;
+        height: 10px;
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        line-height: 1;
+        color: #000000;
+        margin-top: -18px;
+        margin-left: 60px;
+        white-space: nowrap;
+        font-weight: 500;
+        color: #3299ff;
+    }
+    
+    .Block2 {
+        width: 920px;
+        height: 395px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: solid 0.5px #c8c8c8;
+        margin-left: 137px;
+        margin-top: 30px;
+    }
+    
+    .Group-10 {
+        width: 31px;
+        height: 31px;
+        object-fit: contain;
+        float: right;
+        margin: 15px;
+    }
+    
+    .SOLD-OUT-IN-50-MIN {
+        width: 108px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #323232;
+        text-transform: uppercase;
+        float: right;
+        white-space: nowrap;
+        margin-right: 5px;
+        margin-top: 25px;
+    }
+    
+    .This-offering-is-now {
+        width: 231px;
+        height: 90px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: right;
+        color: #646464;
+    }
+    
+    .Price-and-Invest-price-second-card {
+        height: 21px;
+        font-family: GothamHTF-Book;
+        font-size: 20px;
+        color: #000000;
+        text-align: right;
+    }
+    
+    .Action-button-JOIN-WAITLIST {
+        width: 94px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        color: #000000;
+        text-transform: uppercase;
+        padding: 10px 15px;
+    }
+    
+    .CUSTOM-MESSAGE-bar {
+        width: 918px;
+        height: 42px;
+        border-radius: 1px;
+        background-color: #f2f4f6;
+        text-transform: uppercase;
+        margin-top: 24px;
+        margin-left: -27px;
+    }
+    
+    .CUSTOM-MESSAGE-text {
+        width: 117px;
+        height: 12px;
+        font-family: GothamHTF-Book;
+        font-size: 12px;
+        line-height: 1;
+        color: #000000;
+        position: absolute;
+        margin: 15px;
+    }
+    
+    .Block2-Oval {
+        width: 25px;
+        height: 25px;
+        background-color: #f3f5f6;
+        border-radius: 25px /25px;
+        margin-left: 15px;
+    }
+    
+    .Oval-MM {
+        width: 18px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: bold;
+        color: #000000;
+        padding: 4px;
+    }
+    
+    .OvalDiv-SG {
+        width: 25px;
+        height: 25px;
+        background-color: #f3f5f6;
+        border-radius: 25px /25px;
+        margin-left: 12px;
+        margin-top: -19px;
+    }
+    
+    .Oval-SG {
+        width: 15px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: bold;
+        color: #000000;
+        padding: 4px;
+    }
+    
+    .Investors-Milind-Mehere-Micha {
+        width: 338px;
+        height: 15px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+        color: #000000;
+        white-space: nowrap;
+        margin-top: -15px;
+        margin-left: 33px;
+        font-family: GothamHTF-Book;
+        font-weight: normal;
+    }
+    
+    .Block3 {
+        width: 920px;
+        height: 490px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: solid 0.5px #c8c8c8;
+        margin-top: 112px;
+        margin-left: -16px;
+    }
+    
+    .Group-11 {
+        width: 31px;
+        height: 31px;
+        object-fit: contain;
+        float: right;
+        margin: 15px;
+    }
+    
+    .YOURE-INVESTED-IN-T {
+        width: 194px;
+        height: 11px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #000000;
+        text-transform: uppercase;
+        float: right;
+        white-space: nowrap;
+        margin-right: 18px;
+        margin-top: 25px;
+    }
+    
+    .medical--hero {
+        width: 227px;
+        height: 138px;
+        object-fit: contain;
+        margin-left: 15px;
+    }
+    
+    .ItemTitle_REAL-ESTATE-Copy-9 {
+        width: 72px;
+        height: 10px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1;
+        color: #969696;
+        white-space: nowrap;
+        text-transform: uppercase;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+    
+    .ItemInfo_Diversified-Pre-sett-Copy-13 {
+        width: 231px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        color: #3299ff;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    
+    .ProgressBar-small-block {
+        width: 20px;
+        height: 5px;
+        background-color: #3f4042;
+        margin-right: 1px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .ProgressBar-small-block-half {
+        width: 20px;
+        height: 5px;
+        border-radius: 100px;
+        background-color: #3f4042;
+        margin-right: 1px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .TRANCH-INFO-BOX {
+        width: 246px;
+        height: 149px;
+        border-radius: 2px;
+        background-color: #f2f4f6;
+        margin-top: 15px;
+    }
+    
+    .TRANCH-INFO-BOX-TRANCH-INFO {
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        color: #000000;
+        text-align: left;
+        border-bottom: 2px solid #fff;
+    }
+    
+    .fa {
+        margin: 10px;
+    }
+    
+    .TRANCH-INFO-BOX-This-deal-is-funded {
+        width: 225px;
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        color: #000000;
+        margin: 10px;
+        white-space: normal;
+        text-align: left;
+    }
+    
+    .TRANCH-INFO-BOX-Current-tranch-3-of {
+        width: 141px;
+        height: 11px;
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        color: #000000;
+        margin: 10px;
+    }
+    
+    .TRANCH-INFO-BOX-Left-in-tranch-125 {
+        width: 140px;
+        height: 11px;
+        font-family: GothamHTF-Book;
+        font-size: 10px;
+        color: #000000;
+        margin: 10px;
+    }
+    
+    
+    .Price-and-Invest-card3 {
+        float: right;
+        margin-right: 15px;
+        margin-top: 20px;
+    }
+    
+    .Action-button-INVEST-MORE {
+        width: 87px;
+        height: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+        color: #000000;
+        text-transform: uppercase;
+        padding: 10px 15px;
+    }

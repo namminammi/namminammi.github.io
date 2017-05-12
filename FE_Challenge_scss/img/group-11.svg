@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="30" height="30" fill="#009A57" rx="2"/>
+        <text fill="#FFF" font-family="FontAwesome" font-size="14">
+            <tspan x="8" y="20"></tspan>
+        </text>
+        <path fill="#FFF" d="M28.623 1.451c.782-.782 1.416-.519 1.416.575v26.017c0 1.1-.898 1.991-1.991 1.991H2.03c-1.1 0-1.365-.626-.575-1.417L28.623 1.451z" opacity=".17"/>
+    </g>
+</svg>
