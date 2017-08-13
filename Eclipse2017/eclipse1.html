@@ -1,0 +1,558 @@
+<html>
+<head>
+
+<title>Eclipse 2017 calculate distance </title>	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:700" rel="stylesheet"> 
+</head>
+
+<body>
+
+
+<style>
+
+html, body{
+	height: 100%;
+	margin:0;
+	/*font-family: Helvetica;*/
+	font-family: 'Titillium Web', sans-serif;
+}
+
+body{
+	background-color: #0157ae;
+}
+
+.topLeft{
+	text-align: center;
+	min-height: 53px;
+	margin-top: 5%;
+}
+
+.dataMobileView{
+	display:none;
+}
+
+h1{
+	text-align: center;
+	color:#fff;
+}
+
+.eclipseTitle{
+	font-size: 77px;
+	margin-top: 5%;
+	letter-spacing: -3px;
+}
+
+.contentArea{
+	text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+}
+
+#date{
+	color:white;
+	font-size: 20px;
+	margin-bottom:6px;
+	font-weight: bold;
+}
+#countdown{
+	display: none;
+	color:#D42729;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+span{
+	color:white;
+}
+
+#inputBlock{
+	display: block;
+    position: absolute;
+    padding: 2em;
+    left: 50%;
+    margin-top:12%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    min-height: 50%;
+}
+
+.inputfield{
+	font-size:26px;
+	padding:8px;
+	opacity:0.6;
+	text-align: center;
+	font-weight: bold;
+	width:200px;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.emailInput{
+	width:400px;
+	margin-top:8px;
+}
+
+.inputDivEmail{
+	display: inline;
+}
+
+
+.buttonContainer{
+	margin-left:auto;
+    margin-right:auto;
+    height:auto; 
+    width:auto;
+}
+
+.btns{
+	margin:10px;
+}
+
+#refreshBtn{
+	height: 50px;
+	width: 131px;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+#submitBtn{
+	height: 50px;
+	width: 131px;
+	font-size: 18px;
+	font-weight: bold;
+	display: none;
+}
+
+.result{
+	color:#000654;
+	font-size: 30px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+
+
+/*show current location */
+.locationName{
+	font-size: 20px;
+}
+
+.localtimeNum {
+	color:#000654;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.bottomBlock{
+	display: inline-block;
+	margin:10px;
+	width: 30%;
+}
+
+.resultLabel{
+	font-size:18px;
+	color:white;
+	white-space: nowrap;
+	height: 33px;
+	font-weight: 100;
+}
+
+.outputBlock{
+	display: none;
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+
+	.eclipseTitle{
+		font-size: 48px;
+	}
+
+	#inputBlock{
+		margin-top: 36%;
+	}
+
+	#zipcodeBlock{
+		top:74%;
+	}
+
+	.bottomBlock{
+		display: inline;
+	}
+
+
+}
+
+
+/*Tablet/mobile screens*/
+@media screen and (max-width: 600px) {
+
+/*	.dataDesktopView{
+		display: none;
+	}
+
+	.dataMobileView{
+	display:block;
+	}*/
+
+	.contentArea{
+		padding-top:13%;
+	}
+
+	.eclipseTitle{
+		letter-spacing: -2px;
+		font-size: 50px;
+	}
+
+	p{
+		font-size:20px;
+	}
+
+	.eclipseTitle{
+		font-size: 44px;
+		white-space: normal;
+	}
+
+	#inputBlock{
+		margin-top:64%;
+	}
+
+	#zipcodeBlock{
+		top:63%;
+	}
+
+	.emailInput{
+		width: 340px;
+	}
+
+	.resultLabel {
+		white-space: normal;
+	}
+
+#submitBtn{
+		display: inline;
+
+	}
+
+}
+
+
+</style>
+
+<div id="contentContainer">
+	
+<div class="topLeft dataDesktopView dateData">
+<div id="date">Countdown to eclipse date (8/21/17)</div>
+<div id="countdown"></div>
+</div>
+
+<div class="contentArea">
+	<!-- <p>Discover the best time to view the</p> -->
+<h1 class="eclipseTitle">2017 American Eclipse</h1>
+<!-- <div class="dataMobileView dateData">
+<div id="date">Countdown to eclipse date (8/21/17)</div>
+<div id="countdown"></div>
+</div> -->
+
+<div id="inputBlock">
+	<div class="inputDivZip"><input class="inputfield zipcodeInput" placeholder="Enter Zip Code" type="text" pattern="[0-9]*" name="zip" id="zip"></div>
+
+	<div class="buttonContainer">
+	<!-- <div class="btns submitBtn"> <button id ="submitBtn">Submit</button></div> -->
+	<div class="btns refreshBtn"><button id ="refreshBtn">Start again</button></div>	
+	
+	<!-- <div class="errorMessage noDisplay"></div> -->
+	</div>
+
+	<div class="outputBlock">
+	<div class="bottomBlock" id="localTime">
+	<div class="resultLabel">Eclipse time in your city</div>
+	<div class="result localtimeNum"></div> 
+</div>
+
+<div class="bottomBlock" id="totalEclipseLocal">
+	<div class="resultLabel">Closest city where TOTAL Solar eclipse will happen</div>
+	<div class="result cityName"></div> 
+</div>
+
+<div  class="bottomBlock" id="travelDistance">
+	<div class="resultLabel">Estimate travel distance</div>
+	<div class="result travelDistance"></div> 
+</div>
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+<!-- API CALLS to show eclipse data in browser -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+// 1) Getting Zip code from user input
+$(function() {
+
+		// button to refresh page 
+        $('#refreshBtn').click(function() {
+            location.reload();
+            $('.zipcodeInput').val('').focus();
+        });
+
+	// OnKeyDown Function
+	$("#zip").keydown(function() {
+		var zip_in = $(this);
+		var zip_box = $('#zipcodeBlock');
+		var errorBox = $('.errorMessage');
+		var locationName = $('.locationName');
+		
+		if (zip_in.val().length<5)
+		{
+			// console.log("more number needed")
+			// errorBox.removeClass('noDisplay').text("more number needed");
+		}
+		else if ( zip_in.val().length>5)
+		{
+				// console.log('Too many numbers')
+			// zip_box.addClass('error').removeClass('success');
+			// errorBox.removeClass('noDisplay').text("Too many numbers");
+		}
+		else if ((zip_in.val().length == 5) ) 
+		{
+
+
+// Send to zippopotam.us API to fetch city/state
+var a1 = $.ajax({
+	dataType: 'json',
+    url: "http://api.zippopotam.us/us/"  + zip_in.val()
+	}).done(function(zipResult) {
+			// US Zip Code Records Officially Map to only 1 Primary Location
+					places = zipResult['places'][0];
+					cityName = places['place name'];
+					stateName = places['state abbreviation'];
+
+					city_stateName = cityName + ", " + stateName;
+					// zip_box.addClass('success').removeClass('error');
+					locationName.text(city_stateName);
+					console.log(city_stateName);
+					
+	
+	//end of a1				
+	}),
+
+//2) send city/state name to USNO API to fetch local eclipse time  & lat/long data
+    a2 = a1.then(function(locInfo) {
+    		
+    		var navyUrl = 'http://api.usno.navy.mil/eclipses/solar?date=8/21/2017&loc=',
+    			jsonFormat = '&format=json';
+    			console.log('url is :   ' + navyUrl + city_stateName + jsonFormat );
+             // .then() returns a new promise
+             return $.ajax({
+					dataType: 'json',
+				    url: 'http://api.usno.navy.mil/eclipses/solar?date=8/21/2017&loc='+ city_stateName + '&format=json'
+				     
+				    }).done(function(locData) {
+			    		localEclipseTime = locData.local_data[0].time;
+			    		
+		    			//trimming local time to calculate countdown
+						var length = 5;
+						trimmedlocalEclipseTime = localEclipseTime.substring(0, length);
+						$('.localtimeNum').html(trimmedlocalEclipseTime);
+
+			    		localLat = locData.lat;
+			    		localLon = locData.lon;
+			    		console.log("trimmed localEclipseTime is :  " + trimmedlocalEclipseTime);
+			    		console.log('local latitude is : ' + localLat);
+			    		console.log('local longitudse is : ' + localLon);
+			    		
+					});
+     // end of a2        	
+ 	}),
+
+//3) send local time to calculate countdown time and show it
+ 	countDownClock = a2.then(function(calculateClock){
+		
+		console.log("local time from countDownClock : " +  trimmedlocalEclipseTime);
+
+		var end = new Date('08/21/2017 '+ trimmedlocalEclipseTime);
+		console.log("date from end var : "+ end);
+
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            $('#countdown').innerHTML = 'EXPIRED!';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+
+       //Shows countdown clock on the top left corner
+        $('#countdown').html(days + 'days ' + hours + 'hrs ' + minutes + 'min ' + seconds + 'sec');
+    }
+    timer = setInterval(showRemaining, 1000);
+	}),
+
+//4) find the closest city with total eclipse from user's location // 
+	findClosestCity = countDownClock.then(function(tEclipseClosestCity){
+
+		return $.ajax({
+	    type: 'GET',
+	    url: 'totalEclipse_lat_long.json?1',
+	    dataType: 'json',
+	    success: function(data) { 
+	      console.log('json data successfully collected.\n')
+	      console.log(data);
+	      successCallBack(data);
+      		}
+		});
+
+		function successCallBack(tlisting_arr){
+  console.log("tlisting_arr below : ")
+  console.log(tlisting_arr.locations[0]);
+
+ var gLat;
+ var closestCity = new Object();
+ closestCity.distance = 999999999;
+ var distance;
+//Getting user's lat/lon from google
+	var gettingList = $.ajax({
+	    dataType: 'json',
+	    url: "http://maps.googleapis.com/maps/api/geocode/json?address="  + zip_in.val(), // zip code will be replaced by user input later
+	    type:"POST"
+	    }).done(function(info) {
+	            console.log("info array goes below : ")
+	            console.log(info);
+	            gLat = info.results[0].geometry.location.lat;
+	             gLon = info.results[0].geometry.location.lng;
+	            console.log('inside getting List : ' + gLat);
+             	console.log('inside getting List : ' + gLon);
+	            console.log('inside getting list  : ' + info.results[0].geometry.location.lat );//works!
+	
+				//Going over the list of cities and their lat/longitude then add distance from user's zip code. 
+				var i, j, a11, b11;
+				
+				console.log('tlisting: ');
+				console.log(tlisting_arr.locations[0]);
+				console.log('flag5');
+				for (i = 0; i < tlisting_arr.locations.length; i++) {
+				    //for (j = 0; j < tlisting_arr[i].length; j++) {
+				      // originLon11 = -96.698886,
+				      // originLat11 = 33.019843;
+
+  				      originLon11 = gLon,
+				      originLat11 = gLat;
+
+				      
+				
+				      destLon11 = tlisting_arr.locations[i].longitude;
+				      destLat11 = tlisting_arr.locations[i].latitude;
+				      
+				      // console.log('destLon11 = ' + destLon11);
+				      // console.log('destLat11 = ' + destLat11);
+				
+					
+				      distance = hesapla(originLon11, originLat11, destLon11, destLat11);
+				      if(distance < closestCity.distance)
+				      {
+				      	closestCity.distance = distance;
+				      	closestCity.name = tlisting_arr.locations[i].name;
+				      }
+				
+				      console.log('distace is : ' + distance);
+				
+				//end of for loop//
+				}
+
+				$(".cityName").html( closestCity.name );
+				$(".travelDistance").html( closestCity.distance.toFixed(2) + " miles" );
+
+				$("#countdown").css("display", "block");
+				$(".outputBlock").css("display", "block");
+				$('.inputDivEmail').css("display", "none");
+				$('.emailLabel').css("display", "none");
+
+				// $('#submitBtn').css("display", "none");
+
+
+		//hesapla code to calculate the distance b/w 2 points //
+		//https://stackoverflow.com/questions/15671999/json-longitude-latitude-nearest-location
+		// http://jsfiddle.net/MLETD/
+
+    function hesapla(meineLongitude, meineLatitude, long1, lat1) {
+        erdRadius = 6371;
+
+        meineLongitude = meineLongitude * (Math.PI / 180);
+        meineLatitude = meineLatitude * (Math.PI / 180);
+        long1 = long1 * (Math.PI / 180);
+        lat1 = lat1 * (Math.PI / 180);
+
+        x0 = meineLongitude * erdRadius * Math.cos(meineLatitude);
+        y0 = meineLatitude * erdRadius;
+
+        x1 = long1 * erdRadius * Math.cos(lat1);
+        y1 = lat1 * erdRadius;
+
+        dx = x0 - x1;
+        dy = y0 - y1;
+
+        d = Math.sqrt((dx * dx) + (dy * dy));
+        return d;
+    //end of function hesapla
+    }
+
+    function schoneStrecke(d){
+        if (d < 1) {
+            return Math.round(d * 1000) +" m";
+        } else {
+            return Math.round(d * 10) / 10 +" km";
+        }
+		    //end of function schoneStrecke
+		    };	    
+	    //end of gettingList              
+	    });
+
+	//end of function successCallBack//
+	}
+
+//end of function findClosestCity
+	});
+
+
+		//end of ((zip_in.val().length == 5) 
+		}
+});
+
+
+
+//end of document.ready();
+});
+	
+</script>
+
+
+
+</body>
+</html>
