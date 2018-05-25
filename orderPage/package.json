@@ -1,0 +1,16 @@
+{
+  "name": "Nam_Shift7_FEchallenge-v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://namminammi@bitbucket.org/namminammi/nam_shift7_fechallenge.git",
+  "author": "“namminammi” <nammi@nyu.edu>",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^8.5.0",
+    "gulp": "^3.9.1",
+    "gulp-google-webfonts": "^1.1.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}

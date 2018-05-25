@@ -5,102 +5,115 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Order Online</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/fonts/google-fonts/included-fonts/fonts.css">
+    <link rel="stylesheet" href="public/fonts/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css">
 </head>
 
 <body>
-    <nav class="navBar">
-        <nav class="wrapper">
-            <div class="logo">Austin <span><b>Tacos</b></span></div>
-            <input type="checkbox" id="menu-toggle" />
-            <label for="menu-toggle" class="label-toggle"></label>
-            <ul>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+    <nav class="navbar">
+        <div class="navbar__wrapper">
+            <div class="navbar__wrapper--logo">Austin <span><b>Tacos</b></span></div>
+            <input type="checkbox" id="navbar__menu-toggle" />
+            <label for="navbar__menu-toggle" class="navbar__label-toggle"></label>
+            <ul class="topmenu-item-container">
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor">Locations</a></li>
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor">Menu</a></li>
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor">Shop</a></li>
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor">Our Story</a></li>
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor">News</a></li>
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                <li class="topmenu-item-container__items"><a href="#" class="topmenu-item-container__items--anchor"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
             </ul>
-        </nav>
+        </div>
     </nav>
     <div class="main">
-        <header>Order Online</header>
+        <header class="main__header">Order Online</header>
+
         <div class="dotsandlines">
-            <div class="circle-contain">
-                <div class="circle current">
-                    <div class="inner-circle"></div>
+            <div class="dotsandlines__circle-container">
+                <div class="dotsandlines__circle-container--circle dotsandlines__circle-container--circle--current">
+                    <div class="dotsandlines__circle-container--circle--current--blue-circle"></div>
                 </div>
             </div>
-            <div class="line special"></div>
-            <div class="circle-contain">
-                <div class="circle"></div>
+
+            <div class="dotsandlines__line--special"></div>
+            <div class="dotsandlines__circle-container">
+                <div class="dotsandlines__circle-container--circle"></div>
             </div>
-            <div class="line"></div>
-            <div class="circle-contain">
-                <div class="circle"></div>
+
+            <div class="dotsandlines__line"></div>
+            
+            <div class="dotsandlines__circle-container">
+                <div class="dotsandlines__circle-container--circle"></div>
             </div>
-            <div class="line"></div>
-            <div class="circle-contain">
-                <div class="circle"></div>
+
+            <div class="dotsandlines__line"></div>
+
+            <div class="dotsandlines__circle-container">
+                <div class="dotsandlines__circle-container--circle"></div>
             </div>
-            <div class="line"></div>
-            <div class="circle-contain">
-                <div class="circle"></div>
+
+            <div class="dotsandlines__line"></div>
+
+            <div class="dotsandlines__circle-container">
+                <div class="dotsandlines__circle-container--circle"></div>
             </div>
+
         </div>
+
         <div class="dotsanlines-labels-container">
-            <div class="circle-label">Select Location</div>
-            <div class="circle-label">Select Items</div>
-            <div class="circle-label">Payment</div>
-            <div class="circle-label">Delivery</div>
-            <div class="circle-label">Review</div>
+            <div class="dotsanlines-labels-container__circle-label">Select Location</div>
+            <div class="dotsanlines-labels-container__circle-label">Select Items</div>
+            <div class="dotsanlines-labels-container__circle-label">Payment</div>
+            <div class="dotsanlines-labels-container__circle-label">Delivery</div>
+            <div class="dotsanlines-labels-container__circle-label">Review</div>
         </div>
         <div class="select-location">
-            <h3>Select your location</h3>
-            <div class="select-location-wrapper">
-                <div class="box">
-                    <h5>Spicewood</h5>
-                    <p class="address">3021 First Street
+            <h3 class="select-location__title">Select your location</h3>
+            <div class="select-location__wrapper">
+                <div class="select-location__box">
+                    <h5 class="select-location__title">Spicewood</h5>
+                    <p class="select-location__box--address">3021 First Street
                         <br>Austin, TX 78920
                         <br>521-301-0000</p>
                 </div>
-                <div class="box">
-                    <h5>Casa Linda</h5><span class="check-mark"><i class="fas fa-check-circle"></i></span>
-                    <p class="address">3021 First Street
+                <div class="select-location__box">
+                    <h5 class="select-location__title">Casa Linda</h5>
+                    <span class="select-location__box--check-mark">
+                        <i class="fas fa-check-circle"></i></span>
+                    <p class="select-location__box--address">3021 First Street
                         <br>Austin, TX 78920
                         <br>521-301-0000</p>
                 </div>
-                <div class="box">
-                    <h5>Richardson</h5>
-                    <p class="address">3021 First Street
+                <div class="select-location__box">
+                    <h5 class="select-location__title">Richardson</h5>
+                    <p class="select-location__box--address">3021 First Street
                         <br>Austin, TX 78920
                         <br>521-301-0000</p>
                 </div>
-                <div class="box">
-                    <h5>Sugar Land</h5>
-                    <p class="address">3021 First Street
+                <div class="select-location__box">
+                    <h5 class="select-location__title">Sugar Land</h5>
+                    <p class="select-location__box--address">3021 First Street
                         <br>Austin, TX 78920
                         <br>521-301-0000</p>
                 </div>
-                <div class="box">
-                    <h5>Broadway</h5>
-                    <p class="address">3021 First Street
+                <div class="select-location__box">
+                    <h5 class="select-location__title">Broadway</h5>
+                    <p class="select-location__box--address">3021 First Street
                         <br>Austin, TX 78920
                         <br>521-301-0000</p>
                 </div>
-                <div class="box">
-                    <h5>Kingwood</h5>
-                    <p class="address">3021 First Street
+                <div class="select-location__box">
+                    <h5 class="select-location__title">Kingwood</h5>
+                    <p class="select-location__box--address">3021 First Street
                         <br>Austin, TX 78920
                         <br>521-301-0000</p>
                 </div>
                 <div class="btn-container">
-                    <div class="button cancel">Cancel</div>
-                    <div class="button choose">Choose item  &nbsp;<i class="fas fa-arrow-right"></i></div>
+                    <div class="btn-container__button btn-container__button--cancel">Cancel</div>
+                    <div class="btn-container__button btn-container__button--choose">Choose item &nbsp;<i class="fas fa-arrow-right"></i></div>
                 </div>
             </div>
         </div>
