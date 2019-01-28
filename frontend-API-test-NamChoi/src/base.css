@@ -1,0 +1,30 @@
+body {
+  font-family: Helvetica;
+  margin: 0;
+  padding: 50px;
+}
+
+.title {
+	margin-bottom: 1rem;
+}
+
+.result-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.list-item {	
+	border: 1px solid #e0e0e0;
+	padding: 0.5em;
+}
+
+.saved-items {
+	color: blue;
+	border: 1px solid blue;
+	padding: 0.5em;
+	margin-top: 1em;
+}
+
+.saved-items h2 {
+	margin-top: 0.5em;
+}
